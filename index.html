@@ -8,8 +8,6 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<meta name="google" content="notranslate">
-
 <title>Para Maria Eduarda ✨</title>
 
 <style>
@@ -41,11 +39,15 @@ body{
 ================================================== */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
 
     background:
+
         radial-gradient(
             circle at 20% 20%,
             rgba(255,255,255,.05),
@@ -59,6 +61,7 @@ body::before{
         );
 
     pointer-events:none;
+
     z-index:-2;
 }
 
@@ -68,13 +71,17 @@ body::before{
 ================================================== */
 
 #entrada{
+
     position:fixed;
+
     inset:0;
 
     background:#000;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
@@ -86,7 +93,9 @@ body::before{
 
 
 .entrada-conteudo{
+
     width:90%;
+
     max-width:600px;
 
     animation:aparecer 1.5s ease;
@@ -94,6 +103,7 @@ body::before{
 
 
 .entrada-conteudo .pequeno{
+
     font-size:13px;
 
     letter-spacing:4px;
@@ -107,7 +117,9 @@ body::before{
 
 
 .entrada-conteudo h1{
-    font-size:clamp(40px,8vw,75px);
+
+    font-size:
+    clamp(40px,8vw,75px);
 
     font-weight:300;
 
@@ -116,11 +128,13 @@ body::before{
 
 
 .entrada-conteudo h1 span{
+
     font-weight:bold;
 }
 
 
 .entrada-conteudo p{
+
     color:#aaa;
 
     font-size:16px;
@@ -132,6 +146,7 @@ body::before{
 
 
 #btnEntrar{
+
     border:none;
 
     padding:16px 32px;
@@ -153,7 +168,9 @@ body::before{
 
 
 #btnEntrar:hover{
+
     transform:scale(1.07);
+
 }
 
 
@@ -162,6 +179,7 @@ body::before{
 ================================================== */
 
 #site{
+
     display:none;
 
     height:100vh;
@@ -175,6 +193,7 @@ body::before{
 ================================================== */
 
 .slide{
+
     position:absolute;
 
     inset:0;
@@ -185,7 +204,10 @@ body::before{
 
     align-items:center;
 
-    padding:60px 20px 100px;
+    padding:
+    60px
+    20px
+    100px;
 
     opacity:0;
 
@@ -200,6 +222,7 @@ body::before{
 
 
 .slide.ativo{
+
     opacity:1;
 
     visibility:visible;
@@ -209,6 +232,7 @@ body::before{
 
 
 .conteudo{
+
     width:100%;
 
     max-width:900px;
@@ -224,12 +248,15 @@ body::before{
 
 
 .conteudo::-webkit-scrollbar{
+
     width:4px;
 }
 
 
 .conteudo::-webkit-scrollbar-thumb{
+
     background:#444;
+
 }
 
 
@@ -238,6 +265,7 @@ body::before{
 ================================================== */
 
 .eyebrow{
+
     color:#999;
 
     text-transform:uppercase;
@@ -251,7 +279,9 @@ body::before{
 
 
 h2{
-    font-size:clamp(35px,6vw,65px);
+
+    font-size:
+    clamp(35px,6vw,65px);
 
     font-weight:300;
 
@@ -262,11 +292,13 @@ h2{
 
 
 h2 strong{
+
     font-weight:bold;
 }
 
 
 .texto{
+
     max-width:700px;
 
     margin:auto;
@@ -280,7 +312,9 @@ h2 strong{
 
 
 .destaque{
-    font-size:clamp(25px,4vw,45px);
+
+    font-size:
+    clamp(25px,4vw,45px);
 
     line-height:1.5;
 
@@ -295,6 +329,7 @@ h2 strong{
 ================================================== */
 
 .btn{
+
     display:inline-block;
 
     margin-top:30px;
@@ -302,15 +337,15 @@ h2 strong{
     padding:14px 28px;
 
     border:
-        1px solid
-        rgba(255,255,255,.3);
+    1px solid
+    rgba(255,255,255,.3);
 
     border-radius:50px;
 
     color:white;
 
     background:
-        rgba(255,255,255,.05);
+    rgba(255,255,255,.05);
 
     cursor:pointer;
 
@@ -319,6 +354,7 @@ h2 strong{
 
 
 .btn:hover{
+
     background:white;
 
     color:#000;
@@ -332,6 +368,7 @@ h2 strong{
 ================================================== */
 
 .navegacao{
+
     position:fixed;
 
     bottom:25px;
@@ -353,6 +390,7 @@ h2 strong{
 
 
 .nav-btn{
+
     width:48px;
 
     height:48px;
@@ -360,11 +398,11 @@ h2 strong{
     border-radius:50%;
 
     border:
-        1px solid
-        rgba(255,255,255,.3);
+    1px solid
+    rgba(255,255,255,.3);
 
     background:
-        rgba(0,0,0,.6);
+    rgba(0,0,0,.6);
 
     color:white;
 
@@ -377,6 +415,7 @@ h2 strong{
 
 
 .nav-btn:hover{
+
     background:white;
 
     color:black;
@@ -384,6 +423,7 @@ h2 strong{
 
 
 #contadorSlide{
+
     color:#888;
 
     font-size:13px;
@@ -399,6 +439,7 @@ h2 strong{
 ================================================== */
 
 .indicadores{
+
     position:fixed;
 
     top:25px;
@@ -420,6 +461,7 @@ h2 strong{
 
 
 .indicador{
+
     width:25px;
 
     height:3px;
@@ -433,6 +475,7 @@ h2 strong{
 
 
 .indicador.ativo{
+
     background:white;
 }
 
@@ -442,20 +485,25 @@ h2 strong{
 ================================================== */
 
 .galeria{
+
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:22px;
 
     max-width:750px;
 
-    margin:35px auto 0;
+    margin:
+    35px
+    auto
+    0;
 }
 
 
 .foto-card{
+
     position:relative;
 
     overflow:hidden;
@@ -465,25 +513,27 @@ h2 strong{
     background:#111;
 
     border:
-        1px solid
-        rgba(255,255,255,.12);
+    1px solid
+    rgba(255,255,255,.12);
 
     box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.45);
+    0 20px 50px
+    rgba(0,0,0,.45);
 
     transition:.5s ease;
 }
 
 
 .foto-card:hover{
+
     transform:
-        translateY(-8px)
-        scale(1.02);
+    translateY(-8px)
+    scale(1.02);
 }
 
 
 .foto-card img{
+
     width:100%;
 
     height:420px;
@@ -497,11 +547,13 @@ h2 strong{
 
 
 .foto-card:hover img{
+
     transform:scale(1.06);
 }
 
 
 .foto-legenda{
+
     position:absolute;
 
     bottom:0;
@@ -511,21 +563,22 @@ h2 strong{
     right:0;
 
     padding:
-        45px
-        18px
-        18px;
+    45px
+    18px
+    18px;
 
     background:
-        linear-gradient(
-            transparent,
-            rgba(0,0,0,.9)
-        );
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+    );
 
     text-align:left;
 }
 
 
 .foto-legenda span{
+
     font-size:13px;
 
     color:#ddd;
@@ -537,44 +590,51 @@ h2 strong{
 ================================================== */
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:15px;
 
     max-width:750px;
 
-    margin:30px auto 0;
+    margin:
+    30px
+    auto
+    0;
 }
 
 
 .card{
+
     padding:25px;
 
     border:
-        1px solid
-        rgba(255,255,255,.1);
+    1px solid
+    rgba(255,255,255,.1);
 
     border-radius:18px;
 
     background:
-        rgba(255,255,255,.035);
+    rgba(255,255,255,.035);
 
     transition:.3s;
 }
 
 
 .card:hover{
+
     transform:translateY(-5px);
 
     background:
-        rgba(255,255,255,.07);
+    rgba(255,255,255,.07);
 }
 
 
 .card .icone{
+
     font-size:30px;
 
     margin-bottom:12px;
@@ -582,6 +642,7 @@ h2 strong{
 
 
 .card h3{
+
     font-size:17px;
 
     margin-bottom:8px;
@@ -589,6 +650,7 @@ h2 strong{
 
 
 .card p{
+
     color:#999;
 
     font-size:14px;
@@ -602,6 +664,7 @@ h2 strong{
 ================================================== */
 
 .contador{
+
     display:flex;
 
     justify-content:center;
@@ -613,22 +676,24 @@ h2 strong{
 
 
 .numero{
+
     min-width:100px;
 
     padding:20px;
 
     border:
-        1px solid
-        rgba(255,255,255,.12);
+    1px solid
+    rgba(255,255,255,.12);
 
     border-radius:15px;
 
     background:
-        rgba(255,255,255,.04);
+    rgba(255,255,255,.04);
 }
 
 
 .numero strong{
+
     display:block;
 
     font-size:28px;
@@ -636,6 +701,7 @@ h2 strong{
 
 
 .numero span{
+
     font-size:11px;
 
     color:#777;
@@ -651,6 +717,7 @@ h2 strong{
 ================================================== */
 
 .carta{
+
     max-width:700px;
 
     margin:auto;
@@ -658,11 +725,11 @@ h2 strong{
     padding:35px;
 
     border:
-        1px solid
-        rgba(255,255,255,.12);
+    1px solid
+    rgba(255,255,255,.12);
 
     background:
-        rgba(255,255,255,.035);
+    rgba(255,255,255,.035);
 
     border-radius:20px;
 
@@ -675,6 +742,7 @@ h2 strong{
 
 
 .carta .assinatura{
+
     margin-top:25px;
 
     text-align:right;
@@ -690,6 +758,7 @@ h2 strong{
 ================================================== */
 
 .coracao{
+
     position:fixed;
 
     bottom:-30px;
@@ -697,9 +766,9 @@ h2 strong{
     font-size:18px;
 
     animation:
-        subir
-        linear
-        forwards;
+    subir
+    linear
+    forwards;
 
     pointer-events:none;
 
@@ -710,21 +779,24 @@ h2 strong{
 @keyframes subir{
 
     0%{
+
         transform:
-            translateY(0)
-            scale(.5);
+        translateY(0)
+        scale(.5);
 
         opacity:0;
     }
 
     15%{
+
         opacity:.8;
     }
 
     100%{
+
         transform:
-            translateY(-110vh)
-            scale(1.4);
+        translateY(-110vh)
+        scale(1.4);
 
         opacity:0;
     }
@@ -739,37 +811,42 @@ h2 strong{
 @keyframes aparecer{
 
     from{
+
         opacity:0;
 
         transform:
-            translateY(20px);
+        translateY(20px);
     }
 
     to{
+
         opacity:1;
 
         transform:
-            translateY(0);
+        translateY(0);
     }
 
 }
 
 
 .pulsar{
+
     animation:
-        pulsar
-        2s
-        infinite;
+    pulsar
+    2s
+    infinite;
 }
 
 
 @keyframes pulsar{
 
     0%,100%{
+
         transform:scale(1);
     }
 
     50%{
+
         transform:scale(1.08);
     }
 
@@ -783,14 +860,16 @@ h2 strong{
 @media(max-width:650px){
 
     .slide{
+
         padding:
-            55px
-            15px
-            100px;
+        55px
+        15px
+        100px;
     }
 
 
     .conteudo{
+
         max-height:78vh;
 
         padding:10px;
@@ -798,6 +877,7 @@ h2 strong{
 
 
     .texto{
+
         font-size:15px;
 
         line-height:1.8;
@@ -805,11 +885,13 @@ h2 strong{
 
 
     .cards{
+
         grid-template-columns:1fr;
     }
 
 
     .galeria{
+
         grid-template-columns:1fr;
 
         gap:18px;
@@ -817,16 +899,19 @@ h2 strong{
 
 
     .foto-card img{
+
         height:430px;
     }
 
 
     .contador{
+
         gap:8px;
     }
 
 
     .numero{
+
         min-width:75px;
 
         padding:15px 8px;
@@ -834,11 +919,13 @@ h2 strong{
 
 
     .numero strong{
+
         font-size:22px;
     }
 
 
     .carta{
+
         padding:25px;
 
         font-size:14px;
@@ -846,11 +933,13 @@ h2 strong{
 
 
     .indicadores{
+
         gap:4px;
     }
 
 
     .indicador{
+
         width:18px;
     }
 
@@ -862,20 +951,6 @@ h2 strong{
 
 
 <body>
-
-
-<!-- ==================================================
-     ÁUDIO
-================================================== -->
-
-<audio id="musica" loop preload="auto">
-
-    <source
-        src="dia-lugar-e-hora.mp3"
-        type="audio/mpeg">
-
-</audio>
-
 
 
 <!-- ==================================================
@@ -891,34 +966,36 @@ h2 strong{
         </div>
 
         <h1>
-            Para
-            <span translate="no">
-                Maria Eduarda
-            </span>
-            ✨
+            Para <span>Maria Eduarda</span>
         </h1>
 
         <p>
-
             Algumas pessoas aparecem de repente...
-
             <br>
-
             e acabam despertando uma curiosidade
             que dá vontade de descobrir onde vai dar.
-
         </p>
 
         <button id="btnEntrar">
-
             Abrir surpresa ✨
-
         </button>
 
     </div>
 
 </div>
 
+
+<!-- ==================================================
+     ÁUDIO
+================================================== -->
+
+<audio id="musica" loop preload="auto">
+
+    <source
+        src="./dia-lugar-e-hora.mp3"
+        type="audio/mpeg">
+
+</audio>
 
 
 <!-- ==================================================
@@ -936,7 +1013,6 @@ h2 strong{
 </div>
 
 
-
 <!-- ==================================================
      SLIDE 1
 ================================================== -->
@@ -946,14 +1022,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
-            <span translate="no">
-                Maria Eduarda
-            </span>
-            ✨
-
+            Maria Eduarda ✨
         </div>
-
 
         <h2>
 
@@ -961,7 +1031,6 @@ h2 strong{
             <strong>inesperado.</strong>
 
         </h2>
-
 
         <p class="texto">
 
@@ -976,7 +1045,6 @@ h2 strong{
 
         </p>
 
-
         <button
             class="btn"
             onclick="proximo()">
@@ -990,9 +1058,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 2
+     SLIDE 2 - SOBRE ELA
 ================================================== -->
 
 <section class="slide">
@@ -1000,11 +1067,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
-            Algumas descobertas
-
+            Pequenos detalhes
         </div>
-
 
         <h2>
 
@@ -1020,16 +1084,54 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🖤
+                    🎂
                 </div>
 
                 <h3>
-                    Preto
+                    10 de abril
                 </h3>
 
                 <p>
-                    Já entendi que rosa não é exatamente
-                    a sua praia. 😂
+                    O dia em que nasceu alguém
+                    que eu ainda estou tendo
+                    o prazer de conhecer.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🏡
+                </div>
+
+                <h3>
+                    Família
+                </h3>
+
+                <p>
+                    Você mora com seus pais e é
+                    a única filha mulher.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    👦
+                </div>
+
+                <h3>
+                    Dois irmãos
+                </h3>
+
+                <p>
+                    Um de 20 anos e outro de 8.
+                    Uma família com bastante
+                    diferença de idade entre vocês.
                 </p>
 
             </div>
@@ -1047,7 +1149,8 @@ h2 strong{
 
                 <p>
                     Você mesma já falou que viajar
-                    é um dos melhores investimentos.
+                    é um dos melhores investimentos
+                    que alguém pode fazer.
                 </p>
 
             </div>
@@ -1056,16 +1159,16 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🎬
+                    🖤
                 </div>
 
                 <h3>
-                    Cinema
+                    Seu estilo
                 </h3>
 
                 <p>
-                    Um cineminha aparentemente
-                    faz parte da lista.
+                    Preto combina mais com você.
+                    Rosa definitivamente não. 😂
                 </p>
 
             </div>
@@ -1082,44 +1185,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Luan Santana, Jorge & Mateus,
-                    pagode e uma playlist inteira.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icone">
-                    🌹
-                </div>
-
-                <h3>
-                    Romantismo
-                </h3>
-
-                <p>
-                    Você deixou bem claro que gosta
-                    de romantismo e de ser surpreendida.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icone">
-                    💌
-                </div>
-
-                <h3>
-                    Cartas
-                </h3>
-
-                <p>
-                    E aparentemente uma cartinha
-                    ainda tem seu valor.
+                    E setembro já tem um compromisso
+                    com Luan Santana. 😂
                 </p>
 
             </div>
@@ -1132,7 +1199,6 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
      SLIDE 3 - FOTOS
 ================================================== -->
@@ -1142,11 +1208,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
             Uma pausa pra apreciar
-
         </div>
-
 
         <h2>
 
@@ -1155,13 +1218,9 @@ h2 strong{
 
         </h2>
 
-
         <p class="texto">
 
             Eu poderia colocar uma legenda enorme aqui...
-
-            <br>
-
             mas acho que essas fotos conseguem falar
             um pouquinho por si mesmas. 😂
 
@@ -1176,7 +1235,7 @@ h2 strong{
             <div class="foto-card">
 
                 <img
-                    src="foto1.jpeg"
+                    src="https://i.postimg.cc/RVc5HmYq/foto1.jpg"
                     alt="Maria Eduarda">
 
                 <div class="foto-legenda">
@@ -1190,13 +1249,12 @@ h2 strong{
             </div>
 
 
-
             <!-- FOTO 2 -->
 
             <div class="foto-card">
 
                 <img
-                    src="foto2.jpeg"
+                    src="https://i.postimg.cc/g2m9y59m/foto2.jpg"
                     alt="Maria Eduarda">
 
                 <div class="foto-legenda">
@@ -1217,7 +1275,6 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
      SLIDE 4
 ================================================== -->
@@ -1227,27 +1284,23 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
             Uma coisa que eu gostei
-
         </div>
-
 
         <h2>
 
             Você gosta de
-            <strong>atitudes.</strong>
+            <strong>surpresas.</strong>
 
         </h2>
 
-
         <p class="destaque">
 
-            E talvez seja exatamente por isso
-            que eu esteja fazendo isso.
+            Então pensei que uma surpresa
+            talvez fosse uma boa forma
+            de continuar te conhecendo.
 
         </p>
-
 
         <p
             class="texto"
@@ -1261,9 +1314,9 @@ h2 strong{
 
             <br><br>
 
-            Então prefiro demonstrar aos poucos,
-            sem pressa e sem tentar criar expectativas
-            antes da hora.
+            E eu gosto da ideia de demonstrar
+            aos poucos, sem pressa e sem
+            atropelar as coisas.
 
         </p>
 
@@ -1272,9 +1325,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 5
+     SLIDE 5 - VIAGEM
 ================================================== -->
 
 <section class="slide">
@@ -1282,11 +1334,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
             Uma possibilidade
-
         </div>
-
 
         <h2>
 
@@ -1294,7 +1343,6 @@ h2 strong{
             <strong>viajasse juntos?</strong>
 
         </h2>
-
 
         <p class="texto">
 
@@ -1362,9 +1410,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 6
+     SLIDE 6 - COMEÇO
 ================================================== -->
 
 <section class="slide">
@@ -1372,11 +1419,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
             Sobre nós
-
         </div>
-
 
         <h2>
 
@@ -1384,7 +1428,6 @@ h2 strong{
             <strong>começando.</strong>
 
         </h2>
-
 
         <p class="texto">
 
@@ -1410,9 +1453,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 7
+     SLIDE 7 - INTENÇÕES
 ================================================== -->
 
 <section class="slide">
@@ -1420,40 +1462,41 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
-            Uma confissão
-
+            Uma coisa que eu quero deixar clara
         </div>
-
 
         <h2>
 
-            Eu estou gostando de
-            <strong>te conhecer.</strong>
+            Minhas
+            <strong>intenções.</strong>
 
         </h2>
 
-
         <p class="texto">
 
-            Não vou fingir que não existe interesse,
-            porque existe.
+            Eu não estou conversando com você
+            pensando em algo passageiro.
 
             <br><br>
 
-            E também não quero esconder minhas intenções:
-
-            eu estou procurando algo sério,
-            algo que possa se tornar duradouro.
+            Gosto de deixar minhas intenções claras
+            desde o começo: eu estou procurando
+            um relacionamento sério.
 
             <br><br>
 
-            Mas acredito que as melhores histórias
-            começam justamente assim:
+            Quero algo que possa se tornar duradouro,
+            construído com calma, respeito,
+            companheirismo e reciprocidade.
 
-            duas pessoas se conhecendo,
-            conversando e descobrindo
-            se existe reciprocidade.
+            <br><br>
+
+            Não quero forçar nada e nem atropelar
+            o tempo das coisas.
+
+            Quero primeiro te conhecer de verdade,
+            descobrir se existe essa conexão
+            e deixar que tudo aconteça naturalmente.
 
         </p>
 
@@ -1462,9 +1505,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 8 - CARTA
+     SLIDE 8 - ANIVERSÁRIO
 ================================================== -->
 
 <section class="slide">
@@ -1472,18 +1514,60 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
-            Uma pequena carta
-
+            Uma data para guardar 🎂
         </div>
-
 
         <h2>
 
-            <span translate="no">
-                Maria,
-            </span>
+            <strong>10 de abril.</strong>
 
+        </h2>
+
+        <p class="destaque">
+
+            O dia em que nasceu
+            Maria Eduarda.
+
+        </p>
+
+        <p
+            class="texto"
+            style="margin-top:25px;">
+
+            Talvez hoje seja apenas uma data
+            que eu descobri sobre você.
+
+            <br><br>
+
+            Mas agora que eu sei,
+            pode ter certeza que vou lembrar. 😂
+
+            <br><br>
+
+            Afinal, se eu quero te conhecer de verdade,
+            preciso prestar atenção nos detalhes.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SLIDE 9 - CARTA
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma pequena carta
+        </div>
+
+        <h2>
+            Maria,
         </h2>
 
 
@@ -1496,15 +1580,24 @@ h2 strong{
             <br><br>
 
             Eu ainda estou descobrindo muitas coisas
-            sobre você, mas já descobri uma que gosto:
+            sobre você, mas já descobri uma coisa:
 
-            você parece ser daquelas pessoas que gostam
-            de viver momentos e criar histórias.
+            eu gostei de te conhecer.
 
             <br><br>
 
-            E se depender de mim, eu quero ter a chance
-            de construir algumas histórias ao seu lado.
+            Gosto das nossas conversas,
+            das coisas que você me conta,
+            das suas ideias e até das mudanças
+            aleatórias de assunto no meio da conversa. 😂
+
+            <br><br>
+
+            Eu não sei exatamente onde isso vai chegar.
+
+            <br><br>
+
+            Mas sei que quero descobrir.
 
             <br><br>
 
@@ -1512,8 +1605,19 @@ h2 strong{
 
             Sem atropelar nada.
 
-            Apenas deixando acontecer,
-            mas sempre com intenção.
+            Sem criar cobranças.
+
+            <br><br>
+
+            Apenas duas pessoas se conhecendo
+            e descobrindo, aos poucos,
+            se existe algo especial aqui.
+
+            <br><br>
+
+            E se depender da minha vontade,
+            eu quero ter a oportunidade
+            de construir algo bonito com você.
 
             <div class="assinatura">
 
@@ -1528,9 +1632,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 9
+     SLIDE 10 - FINAL
 ================================================== -->
 
 <section class="slide">
@@ -1538,11 +1641,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
             E agora...
-
         </div>
-
 
         <h2>
 
@@ -1550,15 +1650,13 @@ h2 strong{
 
         </h2>
 
-
         <p class="destaque">
 
             Você está preparada
             para descobrir
-            <span>onde isso pode chegar?</span>
+            onde isso pode chegar?
 
         </p>
-
 
         <button
             class="btn pulsar"
@@ -1573,9 +1671,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 10 - FINAL
+     SLIDE 11 - FINAL
 ================================================== -->
 
 <section class="slide">
@@ -1583,11 +1680,8 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-
             Fim?
-
         </div>
-
 
         <h2>
 
@@ -1595,14 +1689,12 @@ h2 strong{
 
         </h2>
 
-
         <p class="destaque">
 
             Isso aqui é só o
             <strong>começo.</strong>
 
         </p>
-
 
         <p
             class="texto"
@@ -1633,7 +1725,6 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
      NAVEGAÇÃO
 ================================================== -->
@@ -1650,7 +1741,7 @@ h2 strong{
 
 
     <div id="contadorSlide">
-        1 / 10
+        1 / 11
     </div>
 
 
@@ -1666,7 +1757,6 @@ h2 strong{
 
 
 </div>
-
 
 
 <script>
@@ -1698,7 +1788,6 @@ const musica =
     document.getElementById("musica");
 
 
-
 /* ==================================================
    TELA DE ENTRADA + MÚSICA
 ================================================== */
@@ -1708,17 +1797,21 @@ btnEntrar.addEventListener(
     function(){
 
         /*
-         * O navegador permite tocar áudio
-         * depois de uma interação do usuário.
-         */
+           A música começa aqui porque o usuário
+           clicou no botão. Isso evita o bloqueio
+           de autoplay dos navegadores.
+        */
 
-        musica.volume = 0.25;
+        musica.volume = 0.45;
 
         musica.play().catch(
-            function(){
+            function(error){
+
                 console.log(
-                    "O navegador bloqueou o áudio."
+                    "Erro ao iniciar a música:",
+                    error
                 );
+
             }
         );
 
@@ -1747,7 +1840,6 @@ btnEntrar.addEventListener(
 );
 
 
-
 /* ==================================================
    CRIAR INDICADORES
 ================================================== */
@@ -1767,7 +1859,9 @@ function criarIndicadores(){
         function(_, index){
 
             const indicador =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             indicador.className =
@@ -1791,7 +1885,6 @@ function criarIndicadores(){
     );
 
 }
-
 
 
 /* ==================================================
@@ -1847,7 +1940,6 @@ function atualizar(){
 }
 
 
-
 /* ==================================================
    PRÓXIMO
 ================================================== */
@@ -1865,7 +1957,6 @@ function proximo(){
 }
 
 
-
 /* ==================================================
    ANTERIOR
 ================================================== */
@@ -1881,7 +1972,6 @@ function anterior(){
     }
 
 }
-
 
 
 /* ==================================================
@@ -1907,7 +1997,6 @@ document.addEventListener(
 
     }
 );
-
 
 
 /* ==================================================
@@ -1959,7 +2048,6 @@ document.addEventListener(
 );
 
 
-
 /* ==================================================
    CORAÇÕES AUTOMÁTICOS
 ================================================== */
@@ -1999,7 +2087,9 @@ function criarCoracoes(){
 
 
             coracao.style.left =
-                Math.random() * 100 + "%";
+                Math.random() *
+                100 +
+                "%";
 
 
             coracao.style.animationDuration =
@@ -2036,7 +2126,6 @@ function criarCoracoes(){
     );
 
 }
-
 
 
 /* ==================================================
@@ -2122,7 +2211,6 @@ function surpresa(){
 }
 
 
-
 /* ==================================================
    REINICIAR
 ================================================== */
@@ -2133,10 +2221,24 @@ function reiniciar(){
 
     atualizar();
 
-    window.scrollTo(
-        0,
-        0
-    );
+    /*
+       Quando clicar em "Ver novamente",
+       mantém a música tocando.
+    */
+
+    if(musica.paused){
+
+        musica.play().catch(
+            function(){
+
+                console.log(
+                    "O navegador bloqueou o áudio."
+                );
+
+            }
+        );
+
+    }
 
 }
 
