@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" translate="no">
 
 <head>
 
@@ -7,6 +7,9 @@
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
+
+<meta name="google"
+      content="notranslate">
 
 <title>Para Maria Eduarda ✨</title>
 
@@ -27,10 +30,18 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#050505;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#020204;
+
     color:white;
+
     overflow:hidden;
+
 }
 
 
@@ -49,20 +60,49 @@ body::before{
     background:
 
         radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,.05),
-            transparent 30%
+            circle at 15% 15%,
+            rgba(255,255,255,.035),
+            transparent 28%
         ),
 
         radial-gradient(
-            circle at 80% 80%,
-            rgba(180,0,40,.12),
-            transparent 35%
+            circle at 85% 25%,
+            rgba(130,0,40,.16),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(80,0,30,.12),
+            transparent 40%
         );
 
     pointer-events:none;
 
     z-index:-2;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.015),
+            transparent 40%
+        );
+
+    pointer-events:none;
+
+    z-index:-1;
+
 }
 
 
@@ -89,6 +129,7 @@ body::before{
     z-index:9999;
 
     transition:1.2s ease;
+
 }
 
 
@@ -96,23 +137,25 @@ body::before{
 
     width:90%;
 
-    max-width:600px;
+    max-width:650px;
 
     animation:aparecer 1.5s ease;
+
 }
 
 
 .entrada-conteudo .pequeno{
 
-    font-size:13px;
+    font-size:12px;
 
-    letter-spacing:4px;
+    letter-spacing:5px;
 
     text-transform:uppercase;
 
-    color:#888;
+    color:#777;
 
     margin-bottom:25px;
+
 }
 
 
@@ -123,25 +166,28 @@ body::before{
 
     font-weight:300;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
+
 }
 
 
 .entrada-conteudo h1 span{
 
     font-weight:bold;
+
 }
 
 
 .entrada-conteudo p{
 
-    color:#aaa;
+    color:#999;
 
     font-size:16px;
 
     line-height:1.8;
 
     margin-bottom:35px;
+
 }
 
 
@@ -149,7 +195,7 @@ body::before{
 
     border:none;
 
-    padding:16px 32px;
+    padding:16px 34px;
 
     border-radius:50px;
 
@@ -164,6 +210,7 @@ body::before{
     cursor:pointer;
 
     transition:.3s;
+
 }
 
 
@@ -185,6 +232,7 @@ body::before{
     height:100vh;
 
     position:relative;
+
 }
 
 
@@ -205,7 +253,7 @@ body::before{
     align-items:center;
 
     padding:
-    60px
+    70px
     20px
     100px;
 
@@ -218,6 +266,7 @@ body::before{
     transition:
         opacity .7s ease,
         transform .7s ease;
+
 }
 
 
@@ -228,6 +277,7 @@ body::before{
     visibility:visible;
 
     transform:scale(1);
+
 }
 
 
@@ -235,7 +285,7 @@ body::before{
 
     width:100%;
 
-    max-width:900px;
+    max-width:950px;
 
     max-height:82vh;
 
@@ -244,18 +294,22 @@ body::before{
     text-align:center;
 
     padding:20px;
+
 }
 
 
 .conteudo::-webkit-scrollbar{
 
     width:4px;
+
 }
 
 
 .conteudo::-webkit-scrollbar-thumb{
 
-    background:#444;
+    background:#333;
+
+    border-radius:10px;
 
 }
 
@@ -266,15 +320,16 @@ body::before{
 
 .eyebrow{
 
-    color:#999;
+    color:#777;
 
     text-transform:uppercase;
 
     letter-spacing:4px;
 
-    font-size:12px;
+    font-size:11px;
 
     margin-bottom:18px;
+
 }
 
 
@@ -288,26 +343,29 @@ h2{
     margin-bottom:25px;
 
     line-height:1.15;
+
 }
 
 
 h2 strong{
 
     font-weight:bold;
+
 }
 
 
 .texto{
 
-    max-width:700px;
+    max-width:720px;
 
     margin:auto;
 
-    color:#ccc;
+    color:#c5c5c5;
 
     font-size:17px;
 
     line-height:1.9;
+
 }
 
 
@@ -318,9 +376,10 @@ h2 strong{
 
     line-height:1.5;
 
-    max-width:750px;
+    max-width:800px;
 
     margin:auto;
+
 }
 
 
@@ -338,7 +397,7 @@ h2 strong{
 
     border:
     1px solid
-    rgba(255,255,255,.3);
+    rgba(255,255,255,.25);
 
     border-radius:50px;
 
@@ -350,6 +409,7 @@ h2 strong{
     cursor:pointer;
 
     transition:.3s;
+
 }
 
 
@@ -360,6 +420,54 @@ h2 strong{
     color:#000;
 
     transform:translateY(-3px);
+
+}
+
+
+/* ==================================================
+   BOTÃO DA MÚSICA
+================================================== */
+
+.music-control{
+
+    position:fixed;
+
+    top:22px;
+
+    right:22px;
+
+    z-index:500;
+
+    border:
+    1px solid
+    rgba(255,255,255,.2);
+
+    background:
+    rgba(0,0,0,.65);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+
+.music-control:hover{
+
+    background:white;
+
+    color:black;
+
 }
 
 
@@ -386,6 +494,7 @@ h2 strong{
     gap:20px;
 
     z-index:100;
+
 }
 
 
@@ -411,6 +520,7 @@ h2 strong{
     font-size:18px;
 
     transition:.3s;
+
 }
 
 
@@ -419,18 +529,20 @@ h2 strong{
     background:white;
 
     color:black;
+
 }
 
 
 #contadorSlide{
 
-    color:#888;
+    color:#777;
 
     font-size:13px;
 
     min-width:45px;
 
     text-align:center;
+
 }
 
 
@@ -454,29 +566,32 @@ h2 strong{
 
     z-index:100;
 
-    max-width:90%;
+    max-width:75%;
 
     overflow:hidden;
+
 }
 
 
 .indicador{
 
-    width:25px;
+    width:24px;
 
     height:3px;
 
-    background:#333;
+    background:#292929;
 
     transition:.4s;
 
     flex-shrink:0;
+
 }
 
 
 .indicador.ativo{
 
     background:white;
+
 }
 
 
@@ -493,12 +608,13 @@ h2 strong{
 
     gap:22px;
 
-    max-width:750px;
+    max-width:780px;
 
     margin:
     35px
     auto
     0;
+
 }
 
 
@@ -518,9 +634,10 @@ h2 strong{
 
     box-shadow:
     0 20px 50px
-    rgba(0,0,0,.45);
+    rgba(0,0,0,.5);
 
     transition:.5s ease;
+
 }
 
 
@@ -529,6 +646,7 @@ h2 strong{
     transform:
     translateY(-8px)
     scale(1.02);
+
 }
 
 
@@ -536,19 +654,21 @@ h2 strong{
 
     width:100%;
 
-    height:420px;
+    height:430px;
 
     object-fit:cover;
 
     display:block;
 
     transition:.7s ease;
+
 }
 
 
 .foto-card:hover img{
 
     transform:scale(1.06);
+
 }
 
 
@@ -563,17 +683,18 @@ h2 strong{
     right:0;
 
     padding:
-    45px
+    60px
     18px
     18px;
 
     background:
     linear-gradient(
         transparent,
-        rgba(0,0,0,.9)
+        rgba(0,0,0,.92)
     );
 
     text-align:left;
+
 }
 
 
@@ -582,6 +703,7 @@ h2 strong{
     font-size:13px;
 
     color:#ddd;
+
 }
 
 
@@ -598,12 +720,13 @@ h2 strong{
 
     gap:15px;
 
-    max-width:750px;
+    max-width:800px;
 
     margin:
     30px
     auto
     0;
+
 }
 
 
@@ -613,7 +736,7 @@ h2 strong{
 
     border:
     1px solid
-    rgba(255,255,255,.1);
+    rgba(255,255,255,.09);
 
     border-radius:18px;
 
@@ -621,6 +744,7 @@ h2 strong{
     rgba(255,255,255,.035);
 
     transition:.3s;
+
 }
 
 
@@ -630,6 +754,7 @@ h2 strong{
 
     background:
     rgba(255,255,255,.07);
+
 }
 
 
@@ -638,6 +763,7 @@ h2 strong{
     font-size:30px;
 
     margin-bottom:12px;
+
 }
 
 
@@ -646,6 +772,7 @@ h2 strong{
     font-size:17px;
 
     margin-bottom:8px;
+
 }
 
 
@@ -656,6 +783,7 @@ h2 strong{
     font-size:14px;
 
     line-height:1.6;
+
 }
 
 
@@ -672,12 +800,13 @@ h2 strong{
     gap:20px;
 
     margin-top:30px;
+
 }
 
 
 .numero{
 
-    min-width:100px;
+    min-width:105px;
 
     padding:20px;
 
@@ -689,6 +818,7 @@ h2 strong{
 
     background:
     rgba(255,255,255,.04);
+
 }
 
 
@@ -697,6 +827,7 @@ h2 strong{
     display:block;
 
     font-size:28px;
+
 }
 
 
@@ -709,6 +840,7 @@ h2 strong{
     text-transform:uppercase;
 
     letter-spacing:2px;
+
 }
 
 
@@ -718,7 +850,7 @@ h2 strong{
 
 .carta{
 
-    max-width:700px;
+    max-width:720px;
 
     margin:auto;
 
@@ -738,6 +870,7 @@ h2 strong{
     line-height:2;
 
     color:#ddd;
+
 }
 
 
@@ -750,6 +883,49 @@ h2 strong{
     font-style:italic;
 
     color:white;
+
+}
+
+
+/* ==================================================
+   PLAYER
+================================================== */
+
+.player{
+
+    max-width:600px;
+
+    margin:30px auto 0;
+
+    padding:22px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.035);
+
+}
+
+
+.player-titulo{
+
+    font-size:14px;
+
+    color:#aaa;
+
+    margin-bottom:12px;
+
+}
+
+
+audio{
+
+    width:100%;
+
 }
 
 
@@ -773,6 +949,7 @@ h2 strong{
     pointer-events:none;
 
     z-index:999;
+
 }
 
 
@@ -785,11 +962,13 @@ h2 strong{
         scale(.5);
 
         opacity:0;
+
     }
 
     15%{
 
         opacity:.8;
+
     }
 
     100%{
@@ -799,6 +978,7 @@ h2 strong{
         scale(1.4);
 
         opacity:0;
+
     }
 
 }
@@ -816,6 +996,7 @@ h2 strong{
 
         transform:
         translateY(20px);
+
     }
 
     to{
@@ -824,6 +1005,7 @@ h2 strong{
 
         transform:
         translateY(0);
+
     }
 
 }
@@ -835,6 +1017,7 @@ h2 strong{
     pulsar
     2s
     infinite;
+
 }
 
 
@@ -843,11 +1026,13 @@ h2 strong{
     0%,100%{
 
         transform:scale(1);
+
     }
 
     50%{
 
         transform:scale(1.08);
+
     }
 
 }
@@ -862,9 +1047,10 @@ h2 strong{
     .slide{
 
         padding:
-        55px
+        60px
         15px
         100px;
+
     }
 
 
@@ -873,6 +1059,7 @@ h2 strong{
         max-height:78vh;
 
         padding:10px;
+
     }
 
 
@@ -881,12 +1068,14 @@ h2 strong{
         font-size:15px;
 
         line-height:1.8;
+
     }
 
 
     .cards{
 
         grid-template-columns:1fr;
+
     }
 
 
@@ -895,18 +1084,21 @@ h2 strong{
         grid-template-columns:1fr;
 
         gap:18px;
+
     }
 
 
     .foto-card img{
 
         height:430px;
+
     }
 
 
     .contador{
 
         gap:8px;
+
     }
 
 
@@ -915,12 +1107,14 @@ h2 strong{
         min-width:75px;
 
         padding:15px 8px;
+
     }
 
 
     .numero strong{
 
         font-size:22px;
+
     }
 
 
@@ -929,18 +1123,30 @@ h2 strong{
         padding:25px;
 
         font-size:14px;
+
     }
 
 
     .indicadores{
 
         gap:4px;
+
     }
 
 
     .indicador{
 
         width:18px;
+
+    }
+
+
+    .music-control{
+
+        top:65px;
+
+        right:15px;
+
     }
 
 }
@@ -965,8 +1171,8 @@ h2 strong{
             Uma pequena surpresa
         </div>
 
-        <h1>
-            Para <span>Maria Eduarda</span>
+        <h1 translate="no">
+            Para <span translate="no">Maria Eduarda</span>
         </h1>
 
         <p>
@@ -986,26 +1192,39 @@ h2 strong{
 
 
 <!-- ==================================================
-     ÁUDIO
-================================================== -->
-
-<audio id="musica" loop preload="auto">
-
-    <source
-        src="./dia-lugar-e-hora.mp3"
-        type="audio/mpeg">
-
-</audio>
-
-
-<!-- ==================================================
      SITE
 ================================================== -->
 
 <div id="site">
 
 
-<!-- INDICADORES -->
+<!-- ==================================================
+     ÁUDIO
+================================================== -->
+
+<audio
+    id="musica"
+    loop>
+
+    <source
+        src="dia-lugar-e-hora.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music-control"
+    id="musicBtn">
+
+    🎵 Música: desligada
+
+</button>
+
+
+<!-- ==================================================
+     INDICADORES
+================================================== -->
 
 <div
     class="indicadores"
@@ -1043,6 +1262,13 @@ h2 strong{
             Mas você já percebeu que eu gosto de fazer
             algumas coisas de um jeito diferente. 😂
 
+            <br><br>
+
+            Então pensei:
+
+            por que não transformar algumas coisas
+            que descobri sobre você em uma pequena surpresa?
+
         </p>
 
         <button
@@ -1067,13 +1293,13 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-            Pequenos detalhes
+            Algumas descobertas
         </div>
 
         <h2>
 
-            Coisas que eu já
-            <strong>descobri sobre você.</strong>
+            Um pouquinho da
+            <strong>Maria que estou conhecendo.</strong>
 
         </h2>
 
@@ -1092,9 +1318,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    O dia em que nasceu alguém
-                    que eu ainda estou tendo
-                    o prazer de conhecer.
+                    Uma data que agora eu já sei
+                    que preciso guardar. 👀
                 </p>
 
             </div>
@@ -1103,7 +1328,7 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🏡
+                    🏠
                 </div>
 
                 <h3>
@@ -1111,8 +1336,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Você mora com seus pais e é
-                    a única filha mulher.
+                    Mora com os pais e é a única
+                    filha mulher.
                 </p>
 
             </div>
@@ -1125,13 +1350,48 @@ h2 strong{
                 </div>
 
                 <h3>
-                    Dois irmãos
+                    Irmão de 20
                 </h3>
 
                 <p>
-                    Um de 20 anos e outro de 8.
-                    Uma família com bastante
-                    diferença de idade entre vocês.
+                    Um dos dois irmãos que fazem
+                    parte da família.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🧒
+                </div>
+
+                <h3>
+                    Irmão de 8
+                </h3>
+
+                <p>
+                    E também tem o caçula
+                    de 8 anos.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🖤
+                </div>
+
+                <h3>
+                    Preto
+                </h3>
+
+                <p>
+                    Já entendi que rosa não é
+                    exatamente a sua praia. 😂
                 </p>
 
             </div>
@@ -1148,9 +1408,71 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Você mesma já falou que viajar
-                    é um dos melhores investimentos
-                    que alguém pode fazer.
+                    Você mesma já me falou que viajar
+                    é um dos melhores investimentos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SLIDE 3 - MÚSICAS
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            A playlist dela 🎵
+        </div>
+
+        <h2>
+
+            Agora eu já sei
+            <strong>o que toca por aí.</strong>
+
+        </h2>
+
+        <p class="texto">
+
+            E aqui tem um nome que claramente
+            merece tratamento especial...
+
+        </p>
+
+
+        <p
+            class="destaque"
+            style="margin-top:25px;">
+
+            ❤️ Luan Santana ❤️
+
+        </p>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icone">
+                    ❤️
+                </div>
+
+                <h3>
+                    Luan Santana
+                </h3>
+
+                <p>
+                    O favorito. Esse aqui tinha
+                    que aparecer primeiro.
                 </p>
 
             </div>
@@ -1159,16 +1481,16 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🖤
+                    🎶
                 </div>
 
                 <h3>
-                    Seu estilo
+                    Jorge & Mateus
                 </h3>
 
                 <p>
-                    Preto combina mais com você.
-                    Rosa definitivamente não. 😂
+                    Um dos nomes que também
+                    não pode faltar.
                 </p>
 
             </div>
@@ -1181,16 +1503,73 @@ h2 strong{
                 </div>
 
                 <h3>
-                    Música
+                    Matheus & Kauan
                 </h3>
 
                 <p>
-                    E setembro já tem um compromisso
-                    com Luan Santana. 😂
+                    Mais um nome já descoberto
+                    da playlist.
                 </p>
 
             </div>
 
+
+            <div class="card">
+
+                <div class="icone">
+                    🌟
+                </div>
+
+                <h3>
+                    Bruno Mars
+                </h3>
+
+                <p>
+                    Porque sertanejo sozinho
+                    não seria suficiente. 😂
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🎸
+                </div>
+
+                <h3>
+                    Henrique & Juliano
+                </h3>
+
+                <p>
+                    Também tem espaço garantido
+                    por aqui.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="player">
+
+            <div class="player-titulo">
+                🎵 Uma música para acompanhar a surpresa
+            </div>
+
+            <audio
+                id="playerMusica"
+                controls>
+
+                <source
+                    src="dia-lugar-e-hora.mp3"
+                    type="audio/mpeg">
+
+                Seu navegador não suporta áudio.
+
+            </audio>
 
         </div>
 
@@ -1200,7 +1579,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 3 - FOTOS
+     SLIDE 4 - FOTOS
 ================================================== -->
 
 <section class="slide">
@@ -1221,8 +1600,11 @@ h2 strong{
         <p class="texto">
 
             Eu poderia colocar uma legenda enorme aqui...
-            mas acho que essas fotos conseguem falar
-            um pouquinho por si mesmas. 😂
+
+            <br>
+
+            Mas acho que essas fotos conseguem
+            falar um pouquinho por si mesmas. 😂
 
         </p>
 
@@ -1236,7 +1618,8 @@ h2 strong{
 
                 <img
                     src="https://i.postimg.cc/RVc5HmYq/foto1.jpg"
-                    alt="Maria Eduarda">
+                    alt="Maria Eduarda"
+                    loading="lazy">
 
                 <div class="foto-legenda">
 
@@ -1255,7 +1638,8 @@ h2 strong{
 
                 <img
                     src="https://i.postimg.cc/g2m9y59m/foto2.jpg"
-                    alt="Maria Eduarda">
+                    alt="Maria Eduarda"
+                    loading="lazy">
 
                 <div class="foto-legenda">
 
@@ -1276,7 +1660,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 4
+     SLIDE 5
 ================================================== -->
 
 <section class="slide">
@@ -1290,15 +1674,14 @@ h2 strong{
         <h2>
 
             Você gosta de
-            <strong>surpresas.</strong>
+            <strong>atitudes.</strong>
 
         </h2>
 
         <p class="destaque">
 
-            Então pensei que uma surpresa
-            talvez fosse uma boa forma
-            de continuar te conhecendo.
+            E talvez seja exatamente por isso
+            que eu esteja fazendo isso.
 
         </p>
 
@@ -1314,9 +1697,9 @@ h2 strong{
 
             <br><br>
 
-            E eu gosto da ideia de demonstrar
-            aos poucos, sem pressa e sem
-            atropelar as coisas.
+            Então prefiro demonstrar aos poucos,
+            sem pressa e sem tentar criar expectativas
+            antes da hora.
 
         </p>
 
@@ -1326,7 +1709,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 5 - VIAGEM
+     SLIDE 6 - VIAGEM
 ================================================== -->
 
 <section class="slide">
@@ -1411,7 +1794,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 6 - COMEÇO
+     SLIDE 7 - COMEÇO
 ================================================== -->
 
 <section class="slide">
@@ -1444,6 +1827,8 @@ h2 strong{
 
             Não quero pular etapas.
 
+            <br><br>
+
             Quero aproveitar cada uma delas.
 
         </p>
@@ -1454,7 +1839,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 7 - INTENÇÕES
+     SLIDE 8 - INTENÇÕES
 ================================================== -->
 
 <section class="slide">
@@ -1462,90 +1847,46 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-            Uma coisa que eu quero deixar clara
+            Uma confissão
         </div>
 
         <h2>
 
-            Minhas
-            <strong>intenções.</strong>
+            Eu estou gostando de
+            <strong>te conhecer.</strong>
 
         </h2>
 
         <p class="texto">
 
-            Eu não estou conversando com você
-            pensando em algo passageiro.
+            Não vou fingir que não existe interesse,
+            porque existe.
 
             <br><br>
 
-            Gosto de deixar minhas intenções claras
-            desde o começo: eu estou procurando
-            um relacionamento sério.
+            E também não quero esconder minhas intenções:
 
             <br><br>
 
-            Quero algo que possa se tornar duradouro,
-            construído com calma, respeito,
-            companheirismo e reciprocidade.
+            <strong>
+                Eu estou procurando um relacionamento sério.
+            </strong>
 
             <br><br>
 
-            Não quero forçar nada e nem atropelar
-            o tempo das coisas.
-
-            Quero primeiro te conhecer de verdade,
-            descobrir se existe essa conexão
-            e deixar que tudo aconteça naturalmente.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ==================================================
-     SLIDE 8 - ANIVERSÁRIO
-================================================== -->
-
-<section class="slide">
-
-    <div class="conteudo">
-
-        <div class="eyebrow">
-            Uma data para guardar 🎂
-        </div>
-
-        <h2>
-
-            <strong>10 de abril.</strong>
-
-        </h2>
-
-        <p class="destaque">
-
-            O dia em que nasceu
-            Maria Eduarda.
-
-        </p>
-
-        <p
-            class="texto"
-            style="margin-top:25px;">
-
-            Talvez hoje seja apenas uma data
-            que eu descobri sobre você.
+            Algo que possa se tornar duradouro,
+            construído com reciprocidade,
+            respeito, companheirismo e vontade
+            dos dois lados.
 
             <br><br>
 
-            Mas agora que eu sei,
-            pode ter certeza que vou lembrar. 😂
+            Mas acredito que as melhores histórias
+            começam justamente assim:
 
-            <br><br>
-
-            Afinal, se eu quero te conhecer de verdade,
-            preciso prestar atenção nos detalhes.
+            duas pessoas se conhecendo,
+            conversando e descobrindo
+            se existe reciprocidade.
 
         </p>
 
@@ -1566,7 +1907,7 @@ h2 strong{
             Uma pequena carta
         </div>
 
-        <h2>
+        <h2 translate="no">
             Maria,
         </h2>
 
@@ -1580,44 +1921,28 @@ h2 strong{
             <br><br>
 
             Eu ainda estou descobrindo muitas coisas
-            sobre você, mas já descobri uma coisa:
+            sobre você, mas já descobri uma que gosto:
 
-            eu gostei de te conhecer.
-
-            <br><br>
-
-            Gosto das nossas conversas,
-            das coisas que você me conta,
-            das suas ideias e até das mudanças
-            aleatórias de assunto no meio da conversa. 😂
+            você parece ser daquelas pessoas que gostam
+            de viver momentos e criar histórias.
 
             <br><br>
 
-            Eu não sei exatamente onde isso vai chegar.
-
-            <br><br>
-
-            Mas sei que quero descobrir.
+            E se depender de mim, eu quero ter a chance
+            de construir algumas histórias ao seu lado.
 
             <br><br>
 
             Sem pressa.
 
+            <br>
+
             Sem atropelar nada.
 
-            Sem criar cobranças.
-
             <br><br>
 
-            Apenas duas pessoas se conhecendo
-            e descobrindo, aos poucos,
-            se existe algo especial aqui.
-
-            <br><br>
-
-            E se depender da minha vontade,
-            eu quero ter a oportunidade
-            de construir algo bonito com você.
+            Apenas deixando acontecer,
+            mas sempre com intenção.
 
             <div class="assinatura">
 
@@ -1633,7 +1958,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 10 - FINAL
+     SLIDE 10
 ================================================== -->
 
 <section class="slide">
@@ -1654,7 +1979,7 @@ h2 strong{
 
             Você está preparada
             para descobrir
-            onde isso pode chegar?
+            <span>onde isso pode chegar?</span>
 
         </p>
 
@@ -1787,37 +2112,19 @@ const site =
 const musica =
     document.getElementById("musica");
 
+const musicBtn =
+    document.getElementById("musicBtn");
+
 
 /* ==================================================
-   TELA DE ENTRADA + MÚSICA
+   TELA DE ENTRADA
 ================================================== */
 
 btnEntrar.addEventListener(
     "click",
     function(){
 
-        /*
-           A música começa aqui porque o usuário
-           clicou no botão. Isso evita o bloqueio
-           de autoplay dos navegadores.
-        */
-
-        musica.volume = 0.45;
-
-        musica.play().catch(
-            function(error){
-
-                console.log(
-                    "Erro ao iniciar a música:",
-                    error
-                );
-
-            }
-        );
-
-
         entrada.style.opacity = "0";
-
 
         setTimeout(
             function(){
@@ -1832,9 +2139,64 @@ btnEntrar.addEventListener(
 
                 criarCoracoes();
 
+                iniciarMusica();
+
             },
             900
         );
+
+    }
+);
+
+
+/* ==================================================
+   MÚSICA
+================================================== */
+
+function iniciarMusica(){
+
+    musica.volume = 0.45;
+
+    musica.play()
+    .then(function(){
+
+        musicBtn.innerText =
+            "🎵 Música: ligada";
+
+    })
+    .catch(function(){
+
+        musicBtn.innerText =
+            "🎵 Tocar música";
+
+    });
+
+}
+
+
+musicBtn.addEventListener(
+    "click",
+    function(){
+
+        if(musica.paused){
+
+            musica.play()
+            .then(function(){
+
+                musicBtn.innerText =
+                    "🎵 Música: ligada";
+
+            });
+
+        }
+        else{
+
+            musica.pause();
+
+            musicBtn.innerText =
+                "🎵 Música: desligada";
+
+        }
 
     }
 );
@@ -1847,26 +2209,18 @@ btnEntrar.addEventListener(
 function criarIndicadores(){
 
     const container =
-        document.getElementById(
-            "indicadores"
-        );
-
+        document.getElementById("indicadores");
 
     container.innerHTML = "";
-
 
     slides.forEach(
         function(_, index){
 
             const indicador =
-                document.createElement(
-                    "div"
-                );
-
+                document.createElement("div");
 
             indicador.className =
                 "indicador";
-
 
             if(index === 0){
 
@@ -1875,7 +2229,6 @@ function criarIndicadores(){
                 );
 
             }
-
 
             container.appendChild(
                 indicador
@@ -1899,7 +2252,6 @@ function atualizar(){
             slide.classList.remove(
                 "ativo"
             );
-
 
             if(index === atual){
 
@@ -1988,7 +2340,6 @@ document.addEventListener(
 
         }
 
-
         if(e.key === "ArrowLeft"){
 
             anterior();
@@ -2024,10 +2375,8 @@ document.addEventListener(
         const fimX =
             e.changedTouches[0].clientX;
 
-
         const distancia =
             fimX - inicioX;
-
 
         if(Math.abs(distancia) > 70){
 
@@ -2058,10 +2407,7 @@ function criarCoracoes(){
         function(){
 
             const coracao =
-                document.createElement(
-                    "div"
-                );
-
+                document.createElement("div");
 
             coracao.className =
                 "coracao";
@@ -2087,23 +2433,17 @@ function criarCoracoes(){
 
 
             coracao.style.left =
-                Math.random() *
-                100 +
-                "%";
+                Math.random() * 100 + "%";
 
 
             coracao.style.animationDuration =
-                (
-                    5 +
-                    Math.random() * 5
-                ) + "s";
+                (5 + Math.random() * 5)
+                + "s";
 
 
             coracao.style.fontSize =
-                (
-                    12 +
-                    Math.random() * 18
-                ) + "px";
+                (12 + Math.random() * 18)
+                + "px";
 
 
             document.body.appendChild(
@@ -2122,7 +2462,7 @@ function criarCoracoes(){
 
 
         },
-        800
+        900
     );
 
 }
@@ -2136,7 +2476,7 @@ function surpresa(){
 
     for(
         let i = 0;
-        i < 50;
+        i < 60;
         i++
     ){
 
@@ -2154,7 +2494,9 @@ function surpresa(){
 
 
                 coracao.innerText =
-                    "♥";
+                    i % 2 === 0
+                    ? "♥"
+                    : "✨";
 
 
                 coracao.style.left =
@@ -2164,17 +2506,15 @@ function surpresa(){
 
 
                 coracao.style.animationDuration =
-                    (
-                        2 +
-                        Math.random() * 3
-                    ) + "s";
+                    (2 +
+                    Math.random() * 3)
+                    + "s";
 
 
                 coracao.style.fontSize =
-                    (
-                        18 +
-                        Math.random() * 25
-                    ) + "px";
+                    (18 +
+                    Math.random() * 25)
+                    + "px";
 
 
                 document.body.appendChild(
@@ -2193,7 +2533,7 @@ function surpresa(){
 
 
             },
-            i * 50
+            i * 40
         );
 
     }
@@ -2221,24 +2561,10 @@ function reiniciar(){
 
     atualizar();
 
-    /*
-       Quando clicar em "Ver novamente",
-       mantém a música tocando.
-    */
-
-    if(musica.paused){
-
-        musica.play().catch(
-            function(){
-
-                console.log(
-                    "O navegador bloqueou o áudio."
-                );
-
-            }
-        );
-
-    }
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
 
