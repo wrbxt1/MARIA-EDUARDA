@@ -8,6 +8,9 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
+<!-- Impede o Google Tradutor de alterar nomes e textos -->
+<meta name="google" content="notranslate">
+
 <title>Para Maria Eduarda ✨</title>
 
 <style>
@@ -33,41 +36,16 @@ body{
     Helvetica,
     sans-serif;
 
-    /* FUNDO ROMÂNTICO - NÃO PRETO */
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255,255,255,.9),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(255,182,193,.45),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 20% 85%,
-            rgba(255,218,185,.45),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #fff8f5,
-            #fce4ec,
-            #f8e8ee,
-            #fff4e6
-        );
+    background:#16051f;
 
-    color:#222;
+    color:white;
 
     overflow:hidden;
-
-    min-height:100vh;
 }
 
 
 /* ==================================================
-   FUNDO DECORATIVO
+   FUNDO ROXO
 ================================================== */
 
 body::before{
@@ -81,14 +59,60 @@ body::before{
     background:
 
         radial-gradient(
-            circle at 50% 50%,
-            rgba(255,255,255,.55),
-            transparent 45%
+            circle at 15% 15%,
+            rgba(160,70,255,.28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,80,180,.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(110,30,180,.30),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #12051b,
+            #27083a,
+            #180522,
+            #351044
         );
 
     pointer-events:none;
 
     z-index:-2;
+}
+
+
+/* ==================================================
+   BRILHO DO FUNDO
+================================================== */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle,
+            transparent 35%,
+            rgba(0,0,0,.25) 100%
+        );
+
+    pointer-events:none;
+
+    z-index:-1;
 }
 
 
@@ -103,11 +127,12 @@ body::before{
     inset:0;
 
     background:
+
         radial-gradient(
             circle at center,
-            #fffafa 0%,
-            #fde8ee 45%,
-            #f7d8df 100%
+            #351044,
+            #16051f 65%,
+            #08020d
         );
 
     display:flex;
@@ -142,7 +167,7 @@ body::before{
 
     text-transform:uppercase;
 
-    color:#9a777f;
+    color:#d8b7ff;
 
     margin-bottom:25px;
 }
@@ -155,9 +180,10 @@ body::before{
 
     font-weight:300;
 
-    color:#4a3036;
-
     margin-bottom:15px;
+
+    text-shadow:
+    0 0 30px rgba(210,120,255,.25);
 }
 
 
@@ -165,13 +191,23 @@ body::before{
 
     font-weight:bold;
 
-    color:#9b4059;
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #dba8ff,
+        #fff
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
 }
 
 
 .entrada-conteudo p{
 
-    color:#725b61;
+    color:#cbbbd5;
 
     font-size:16px;
 
@@ -189,9 +225,9 @@ body::before{
 
     border-radius:50px;
 
-    background:#9b4059;
+    background:white;
 
-    color:white;
+    color:#21072e;
 
     font-size:16px;
 
@@ -202,8 +238,8 @@ body::before{
     transition:.3s;
 
     box-shadow:
-        0 10px 30px
-        rgba(155,64,89,.25);
+    0 10px 35px
+    rgba(190,90,255,.25);
 }
 
 
@@ -212,8 +248,8 @@ body::before{
     transform:scale(1.07);
 
     box-shadow:
-        0 15px 35px
-        rgba(155,64,89,.35);
+    0 15px 45px
+    rgba(220,130,255,.4);
 }
 
 
@@ -228,16 +264,6 @@ body::before{
     height:100vh;
 
     position:relative;
-}
-
-
-/* ==================================================
-   ÁUDIO
-================================================== */
-
-#musica{
-
-    display:none;
 }
 
 
@@ -308,7 +334,7 @@ body::before{
 
 .conteudo::-webkit-scrollbar-thumb{
 
-    background:#c89ca8;
+    background:#a86bd1;
 
     border-radius:10px;
 }
@@ -320,7 +346,7 @@ body::before{
 
 .eyebrow{
 
-    color:#9b6875;
+    color:#d9b4ff;
 
     text-transform:uppercase;
 
@@ -343,7 +369,8 @@ h2{
 
     line-height:1.15;
 
-    color:#49343a;
+    text-shadow:
+    0 0 30px rgba(210,120,255,.15);
 }
 
 
@@ -351,7 +378,16 @@ h2 strong{
 
     font-weight:bold;
 
-    color:#9b4059;
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #dba8ff
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
 }
 
 
@@ -361,7 +397,7 @@ h2 strong{
 
     margin:auto;
 
-    color:#68565c;
+    color:#ddd0e5;
 
     font-size:17px;
 
@@ -379,16 +415,6 @@ h2 strong{
     max-width:750px;
 
     margin:auto;
-
-    color:#49343a;
-}
-
-
-.destaque span{
-
-    color:#9b4059;
-
-    font-weight:bold;
 }
 
 
@@ -406,37 +432,30 @@ h2 strong{
 
     border:
     1px solid
-    rgba(155,64,89,.35);
+    rgba(255,255,255,.3);
 
     border-radius:50px;
 
-    color:#7e354a;
+    color:white;
 
     background:
-    rgba(255,255,255,.55);
+    rgba(255,255,255,.07);
 
     cursor:pointer;
 
     transition:.3s;
 
-    font-size:15px;
-
-    font-weight:500;
-
-    box-shadow:
-        0 8px 25px
-        rgba(120,60,80,.08);
+    backdrop-filter:blur(10px);
 }
 
 
 .btn:hover{
 
-    background:#9b4059;
+    background:white;
 
-    color:white;
+    color:#24082f;
 
     transform:translateY(-3px);
-
 }
 
 
@@ -476,36 +495,32 @@ h2 strong{
 
     border:
     1px solid
-    rgba(155,64,89,.3);
+    rgba(255,255,255,.3);
 
     background:
-    rgba(255,255,255,.65);
+    rgba(20,5,30,.65);
 
-    color:#7e354a;
+    color:white;
 
     cursor:pointer;
 
     font-size:18px;
 
     transition:.3s;
-
-    box-shadow:
-        0 5px 20px
-        rgba(80,40,50,.08);
 }
 
 
 .nav-btn:hover{
 
-    background:#9b4059;
+    background:white;
 
-    color:white;
+    color:#21072e;
 }
 
 
 #contadorSlide{
 
-    color:#8b6b73;
+    color:#c9afd4;
 
     font-size:13px;
 
@@ -547,7 +562,7 @@ h2 strong{
 
     height:3px;
 
-    background:rgba(120,80,90,.2);
+    background:#51335f;
 
     transition:.4s;
 
@@ -557,7 +572,11 @@ h2 strong{
 
 .indicador.ativo{
 
-    background:#9b4059;
+    background:#e3b8ff;
+
+    box-shadow:
+    0 0 10px
+    rgba(220,150,255,.5);
 }
 
 
@@ -591,15 +610,15 @@ h2 strong{
 
     border-radius:22px;
 
-    background:#fff;
+    background:#160b1d;
 
     border:
     1px solid
-    rgba(155,64,89,.15);
+    rgba(255,255,255,.15);
 
     box-shadow:
     0 20px 50px
-    rgba(80,40,50,.18);
+    rgba(0,0,0,.45);
 
     transition:.5s ease;
 }
@@ -651,7 +670,7 @@ h2 strong{
     background:
     linear-gradient(
         transparent,
-        rgba(45,20,28,.8)
+        rgba(20,5,25,.95)
     );
 
     text-align:left;
@@ -662,7 +681,7 @@ h2 strong{
 
     font-size:13px;
 
-    color:#fff;
+    color:#eee;
 }
 
 
@@ -694,18 +713,16 @@ h2 strong{
 
     border:
     1px solid
-    rgba(155,64,89,.12);
+    rgba(255,255,255,.12);
 
     border-radius:18px;
 
     background:
-    rgba(255,255,255,.48);
+    rgba(255,255,255,.045);
 
     transition:.3s;
 
-    box-shadow:
-        0 10px 30px
-        rgba(100,50,60,.06);
+    backdrop-filter:blur(8px);
 }
 
 
@@ -714,7 +731,7 @@ h2 strong{
     transform:translateY(-5px);
 
     background:
-    rgba(255,255,255,.7);
+    rgba(255,255,255,.08);
 }
 
 
@@ -731,14 +748,12 @@ h2 strong{
     font-size:17px;
 
     margin-bottom:8px;
-
-    color:#4d363d;
 }
 
 
 .card p{
 
-    color:#806d73;
+    color:#bcaec4;
 
     font-size:14px;
 
@@ -770,16 +785,14 @@ h2 strong{
 
     border:
     1px solid
-    rgba(155,64,89,.15);
+    rgba(255,255,255,.12);
 
     border-radius:15px;
 
     background:
-    rgba(255,255,255,.5);
+    rgba(255,255,255,.04);
 
-    box-shadow:
-        0 10px 30px
-        rgba(100,50,60,.06);
+    backdrop-filter:blur(8px);
 }
 
 
@@ -788,8 +801,6 @@ h2 strong{
     display:block;
 
     font-size:28px;
-
-    color:#9b4059;
 }
 
 
@@ -797,7 +808,7 @@ h2 strong{
 
     font-size:11px;
 
-    color:#8b747a;
+    color:#a58fac;
 
     text-transform:uppercase;
 
@@ -819,10 +830,10 @@ h2 strong{
 
     border:
     1px solid
-    rgba(155,64,89,.15);
+    rgba(255,255,255,.12);
 
     background:
-    rgba(255,255,255,.55);
+    rgba(255,255,255,.045);
 
     border-radius:20px;
 
@@ -830,11 +841,13 @@ h2 strong{
 
     line-height:2;
 
-    color:#625258;
+    color:#ddd;
+
+    backdrop-filter:blur(10px);
 
     box-shadow:
-        0 15px 40px
-        rgba(100,50,60,.08);
+    0 20px 60px
+    rgba(0,0,0,.25);
 }
 
 
@@ -846,7 +859,7 @@ h2 strong{
 
     font-style:italic;
 
-    color:#9b4059;
+    color:white;
 }
 
 
@@ -871,7 +884,11 @@ h2 strong{
 
     z-index:999;
 
-    color:#b64d68;
+    filter:
+    drop-shadow(
+        0 0 8px
+        rgba(220,150,255,.5)
+    );
 }
 
 
@@ -948,56 +965,6 @@ h2 strong{
 
         transform:scale(1.08);
     }
-
-}
-
-
-/* ==================================================
-   BOTÃO DA MÚSICA
-================================================== */
-
-.controle-musica{
-
-    position:fixed;
-
-    top:22px;
-
-    right:20px;
-
-    z-index:500;
-
-    border:
-    1px solid
-    rgba(155,64,89,.25);
-
-    background:
-    rgba(255,255,255,.65);
-
-    color:#7e354a;
-
-    width:44px;
-
-    height:44px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:17px;
-
-    transition:.3s;
-
-    box-shadow:
-        0 5px 20px
-        rgba(80,40,50,.08);
-}
-
-
-.controle-musica:hover{
-
-    background:#9b4059;
-
-    color:white;
 
 }
 
@@ -1092,14 +1059,6 @@ h2 strong{
         width:18px;
     }
 
-
-    .controle-musica{
-
-        top:18px;
-
-        right:15px;
-    }
-
 }
 
 </style>
@@ -1123,29 +1082,18 @@ h2 strong{
         </div>
 
         <h1>
-            Para <span>Maria Eduarda</span>
+            Para <span translate="no">Maria Eduarda</span>
         </h1>
 
         <p>
-
             Algumas pessoas aparecem de repente...
-
             <br>
-
             e acabam despertando uma curiosidade
             que dá vontade de descobrir onde vai dar.
-
-            <br><br>
-
-            E talvez uma música tenha tudo a ver
-            com essa história. 🎵
-
         </p>
 
         <button id="btnEntrar">
-
             Abrir surpresa ✨
-
         </button>
 
     </div>
@@ -1153,13 +1101,8 @@ h2 strong{
 </div>
 
 
-
 <!-- ==================================================
-     ÁUDIO GLOBAL
-     
-     IMPORTANTE:
-     O arquivo dia-lugar-e-hora.mp3 deve ficar
-     na MESMA PASTA deste index.html.
+     MÚSICA
 ================================================== -->
 
 <audio
@@ -1168,7 +1111,6 @@ h2 strong{
     preload="auto"
     loop>
 </audio>
-
 
 
 <!-- ==================================================
@@ -1184,19 +1126,6 @@ h2 strong{
     class="indicadores"
     id="indicadores">
 </div>
-
-
-<!-- CONTROLE DA MÚSICA -->
-
-<button
-    class="controle-musica"
-    id="controleMusica"
-    title="Pausar música">
-
-    🎵
-
-</button>
-
 
 
 <!-- ==================================================
@@ -1231,16 +1160,27 @@ h2 strong{
 
             <br><br>
 
-            E já que você gosta de ser surpreendida,
-            resolvi preparar uma pequena surpresa.
+            E antes de continuar, escolhi uma música
+            que combina com a ideia desse momento:
+
+            <br><br>
+
+            <strong>
+                “Dia, Lugar e Hora” — Luan Santana.
+            </strong>
+
+            <br><br>
+
+            Então aperta o botão, deixa a música tocar
+            e vem descobrir o resto. 🎶✨
 
         </p>
 
         <button
             class="btn"
-            onclick="proximo()">
+            onclick="iniciarMusicaEProximo()">
 
-            Continuar →
+            Começar 🎶 →
 
         </button>
 
@@ -1249,9 +1189,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 2 - SOBRE ELA
+     SLIDE 2
 ================================================== -->
 
 <section class="slide">
@@ -1284,7 +1223,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    10 de abril. 🎉
+                    Dia <strong>10 de abril</strong>.
+                    Agora essa data já ficou registrada. ✨
                 </p>
 
             </div>
@@ -1293,11 +1233,11 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    👨‍👩‍👧‍👦
+                    🏠
                 </div>
 
                 <h3>
-                    Família
+                    Sua família
                 </h3>
 
                 <p>
@@ -1387,64 +1327,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 3 - MÚSICA
-================================================== -->
-
-<section class="slide">
-
-    <div class="conteudo">
-
-        <div class="eyebrow">
-            Uma música
-        </div>
-
-        <h2>
-
-            Tem uma música que
-            <strong>combina com isso.</strong>
-
-        </h2>
-
-        <p class="destaque">
-
-            “Dia, Lugar e Hora” 🎵
-
-        </p>
-
-        <p
-            class="texto"
-            style="margin-top:25px;">
-
-            Afinal, algumas histórias começam
-            simplesmente porque duas pessoas
-            se encontram no dia, no lugar e na hora certa.
-
-            <br><br>
-
-            E quando você apertou aquele botão
-            no começo...
-
-            <br><br>
-
-            essa música começou a tocar.
-
-            <br><br>
-
-            Agora ela vai continuar enquanto
-            você passeia por essa surpresa. 🤍
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     SLIDE 4 - FOTOS
+     SLIDE 3 - FOTOS
 ================================================== -->
 
 <section class="slide">
@@ -1465,9 +1349,6 @@ h2 strong{
         <p class="texto">
 
             Eu poderia colocar uma legenda enorme aqui...
-
-            <br>
-
             mas acho que essas fotos conseguem falar
             um pouquinho por si mesmas. 😂
 
@@ -1482,8 +1363,9 @@ h2 strong{
             <div class="foto-card">
 
                 <img
-                    src="foto1.jpeg"
-                    alt="Maria Eduarda">
+                    src="https://i.postimg.cc/RVc5HmYq/foto1.jpg"
+                    alt="Maria Eduarda"
+                    translate="no">
 
                 <div class="foto-legenda">
 
@@ -1496,14 +1378,14 @@ h2 strong{
             </div>
 
 
-
             <!-- FOTO 2 -->
 
             <div class="foto-card">
 
                 <img
-                    src="foto2.jpeg"
-                    alt="Maria Eduarda">
+                    src="https://i.postimg.cc/g2m9y59m/foto2.jpg"
+                    alt="Maria Eduarda"
+                    translate="no">
 
                 <div class="foto-legenda">
 
@@ -1523,9 +1405,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 5 - MÚSICA E GOSTOS
+     SLIDE 4 - MÚSICAS
 ================================================== -->
 
 <section class="slide">
@@ -1533,16 +1414,15 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-            Sua playlist
+            Sua trilha sonora 🎶
         </div>
 
         <h2>
 
-            E eu já descobri
-            <strong>alguns dos seus favoritos.</strong>
+            Já descobri alguns
+            <strong>dos seus favoritos.</strong>
 
         </h2>
-
 
         <div class="cards">
 
@@ -1550,7 +1430,7 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🎤
+                    ❤️
                 </div>
 
                 <h3>
@@ -1558,7 +1438,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    O favorito. Isso aqui eu já decorei. 😂
+                    O favorito.
+                    Então não poderia faltar aqui.
                 </p>
 
             </div>
@@ -1575,7 +1456,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Sertanejo também não pode faltar.
+                    Mais uma dupla que já entrou
+                    para a playlist.
                 </p>
 
             </div>
@@ -1592,7 +1474,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Mais um nome garantido na playlist.
+                    Também tem espaço garantido
+                    na sua trilha sonora.
                 </p>
 
             </div>
@@ -1601,7 +1484,7 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🕺
+                    🌎
                 </div>
 
                 <h3>
@@ -1609,8 +1492,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Porque a playlist também
-                    precisa de variedade.
+                    Porque uma playlist boa
+                    também precisa variar.
                 </p>
 
             </div>
@@ -1619,7 +1502,7 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🎸
+                    🤠
                 </div>
 
                 <h3>
@@ -1627,7 +1510,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Mais um que já entrou na lista.
+                    Outro nome que não poderia
+                    ficar de fora.
                 </p>
 
             </div>
@@ -1640,12 +1524,13 @@ h2 strong{
                 </div>
 
                 <h3>
-                    Uma playlist inteira
+                    E essa música...
                 </h3>
 
                 <p>
-                    Acho que ainda vou descobrir
-                    vários outros. 😂
+                    “Dia, Lugar e Hora”
+                    ficou responsável pela trilha
+                    dessa surpresa.
                 </p>
 
             </div>
@@ -1658,9 +1543,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 6 - ATITUDES
+     SLIDE 5
 ================================================== -->
 
 <section class="slide">
@@ -1701,10 +1585,6 @@ h2 strong{
             sem pressa e sem tentar criar expectativas
             antes da hora.
 
-            <br><br>
-
-            Mas deixando claro que existe intenção.
-
         </p>
 
     </div>
@@ -1712,9 +1592,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 7 - VIAGEM
+     SLIDE 6
 ================================================== -->
 
 <section class="slide">
@@ -1745,11 +1624,6 @@ h2 strong{
             experimentar coisas diferentes,
             rir de coisas aleatórias
             e voltar com histórias pra contar.
-
-            <br><br>
-
-            Talvez um dia essa ideia
-            realmente saia daqui. 😉
 
         </p>
 
@@ -1803,9 +1677,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 8 - SOBRE VOCÊS
+     SLIDE 7
 ================================================== -->
 
 <section class="slide">
@@ -1838,15 +1711,7 @@ h2 strong{
 
             Não quero pular etapas.
 
-            <br><br>
-
             Quero aproveitar cada uma delas.
-
-            <br><br>
-
-            Conversar, sair, viajar,
-            conhecer você melhor
-            e ver naturalmente onde isso pode chegar.
 
         </p>
 
@@ -1855,9 +1720,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 9 - INTENÇÕES
+     SLIDE 8
 ================================================== -->
 
 <section class="slide">
@@ -1882,20 +1746,19 @@ h2 strong{
 
             <br><br>
 
-            E também não quero esconder minhas intenções.
+            E também não quero esconder minhas intenções:
+
+            <strong>
+                eu estou procurando algo sério,
+                algo que possa se tornar duradouro.
+            </strong>
 
             <br><br>
 
-            Eu estou procurando um
-            <strong>relacionamento sério</strong>,
-            algo que possa se tornar
-            <strong>duradouro.</strong>
-
-            <br><br>
-
-            Quero alguém para construir algo de verdade,
-            com reciprocidade, companheirismo,
-            respeito e vontade dos dois lados.
+            Quero conhecer você de verdade,
+            compartilhar momentos,
+            estar presente e construir algo
+            que seja bom para nós dois.
 
             <br><br>
 
@@ -1913,9 +1776,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 10 - CARTA
+     SLIDE 9 - CARTA
 ================================================== -->
 
 <section class="slide">
@@ -1926,7 +1788,7 @@ h2 strong{
             Uma pequena carta
         </div>
 
-        <h2>
+        <h2 translate="no">
             Maria,
         </h2>
 
@@ -1954,32 +1816,26 @@ h2 strong{
 
             Sem pressa.
 
-            <br>
-
             Sem atropelar nada.
-
-            <br>
 
             Apenas deixando acontecer,
             mas sempre com intenção.
 
             <br><br>
 
-            Quero te conhecer de verdade,
-            descobrir cada vez mais sobre você
-            e, se os dois quiserem,
-            transformar essa história em algo sério
-            e duradouro.
+            Eu quero algo sério.
+
+            Algo verdadeiro.
+
+            Algo que, se os dois quiserem,
+            possa durar.
 
             <br><br>
 
-            Talvez seja cedo para saber
-            onde tudo isso vai chegar.
-
-            <br><br>
-
-            Mas não é cedo para saber
-            que eu quero descobrir.
+            E talvez essa música esteja tocando
+            justamente para lembrar que algumas coisas
+            acontecem quando encontram o
+            <strong>dia, o lugar e a hora certos.</strong>
 
             <div class="assinatura">
 
@@ -1994,9 +1850,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 11 - PERGUNTA
+     SLIDE 10
 ================================================== -->
 
 <section class="slide">
@@ -2034,9 +1889,8 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
-     SLIDE 12 - FINAL
+     SLIDE 11 - FINAL
 ================================================== -->
 
 <section class="slide">
@@ -2069,15 +1923,7 @@ h2 strong{
 
             <br><br>
 
-            Sabe que eu quero te conhecer,
-            sabe minhas intenções
-            e sabe que estou procurando algo sério.
-
-            <br><br>
-
             O resto...
-
-            <br><br>
 
             a gente descobre pessoalmente. 😉
 
@@ -2097,7 +1943,6 @@ h2 strong{
 </section>
 
 
-
 <!-- ==================================================
      NAVEGAÇÃO
 ================================================== -->
@@ -2114,7 +1959,7 @@ h2 strong{
 
 
     <div id="contadorSlide">
-        1 / 12
+        1 / 11
     </div>
 
 
@@ -2144,18 +1989,10 @@ const slides =
 
 let atual = 0;
 
-
-/* ==================================================
-   ÁUDIO
-================================================== */
-
 const musica =
     document.getElementById("musica");
 
-const controleMusica =
-    document.getElementById("controleMusica");
-
-let musicaTocando = false;
+let musicaIniciada = false;
 
 
 /* ==================================================
@@ -2174,10 +2011,9 @@ const site =
 
 btnEntrar.addEventListener(
     "click",
-    async function(){
+    function(){
 
         entrada.style.opacity = "0";
-
 
         setTimeout(
             function(){
@@ -2196,83 +2032,59 @@ btnEntrar.addEventListener(
             900
         );
 
-
-        /*
-           A música começa exatamente quando
-           ela aperta "Abrir surpresa".
-
-           Como o áudio está FORA dos slides,
-           ele não será reiniciado ao trocar
-           de página.
-        */
-
-        try{
-
-            musica.volume = 0.8;
-
-            await musica.play();
-
-            musicaTocando = true;
-
-            controleMusica.innerText = "🎵";
-
-        }
-        catch(erro){
-
-            console.log(
-                "O navegador bloqueou a reprodução:",
-                erro
-            );
-
-            controleMusica.innerText = "🔇";
-
-        }
-
     }
 );
 
 
 /* ==================================================
-   CONTROLE MANUAL DA MÚSICA
+   INICIAR MÚSICA
 ================================================== */
 
-controleMusica.addEventListener(
-    "click",
-    function(){
+function iniciarMusica(){
 
-        if(musica.paused){
+    if(musicaIniciada){
 
-            musica.play()
-                .then(function(){
-
-                    musicaTocando = true;
-
-                    controleMusica.innerText =
-                        "🎵";
-
-                })
-                .catch(function(){
-
-                    console.log(
-                        "Não foi possível iniciar a música."
-                    );
-
-                });
-
-        }
-        else{
-
-            musica.pause();
-
-            musicaTocando = false;
-
-            controleMusica.innerText =
-                "🔇";
-
-        }
+        return;
 
     }
-);
+
+    musicaIniciada = true;
+
+    musica.volume = 0.65;
+
+    const tentativa =
+        musica.play();
+
+    if(tentativa !== undefined){
+
+        tentativa.catch(
+            function(){
+
+                musicaIniciada = false;
+
+                console.log(
+                    "Não foi possível iniciar a música."
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   BOTÃO DA MÚSICA
+================================================== */
+
+function iniciarMusicaEProximo(){
+
+    iniciarMusica();
+
+    proximo();
+
+}
 
 
 /* ==================================================
@@ -2284,9 +2096,7 @@ function criarIndicadores(){
     const container =
         document.getElementById("indicadores");
 
-
     container.innerHTML = "";
-
 
     slides.forEach(
         function(_, index){
@@ -2294,10 +2104,8 @@ function criarIndicadores(){
             const indicador =
                 document.createElement("div");
 
-
             indicador.className =
                 "indicador";
-
 
             if(index === 0){
 
@@ -2306,7 +2114,6 @@ function criarIndicadores(){
                 );
 
             }
-
 
             container.appendChild(
                 indicador
@@ -2330,7 +2137,6 @@ function atualizar(){
             slide.classList.remove(
                 "ativo"
             );
-
 
             if(index === atual){
 
@@ -2419,7 +2225,6 @@ document.addEventListener(
 
         }
 
-
         if(e.key === "ArrowLeft"){
 
             anterior();
@@ -2455,10 +2260,8 @@ document.addEventListener(
         const fimX =
             e.changedTouches[0].clientX;
 
-
         const distancia =
             fimX - inicioX;
-
 
         if(Math.abs(distancia) > 70){
 
@@ -2491,10 +2294,8 @@ function criarCoracoes(){
             const coracao =
                 document.createElement("div");
 
-
             coracao.className =
                 "coracao";
-
 
             const simbolos = [
 
@@ -2505,7 +2306,6 @@ function criarCoracoes(){
 
             ];
 
-
             coracao.innerText =
                 simbolos[
                     Math.floor(
@@ -2514,25 +2314,20 @@ function criarCoracoes(){
                     )
                 ];
 
-
             coracao.style.left =
                 Math.random() * 100 + "%";
-
 
             coracao.style.animationDuration =
                 (5 + Math.random() * 5)
                 + "s";
 
-
             coracao.style.fontSize =
                 (12 + Math.random() * 18)
                 + "px";
 
-
             document.body.appendChild(
                 coracao
             );
-
 
             setTimeout(
                 function(){
@@ -2543,7 +2338,6 @@ function criarCoracoes(){
                 10000
             );
 
-
         },
         800
     );
@@ -2552,7 +2346,7 @@ function criarCoracoes(){
 
 
 /* ==================================================
-   SURPRESA FINAL
+   SURPRESA
 ================================================== */
 
 function surpresa(){
@@ -2571,37 +2365,30 @@ function surpresa(){
                         "div"
                     );
 
-
                 coracao.className =
                     "coracao";
 
-
                 coracao.innerText =
                     "♥";
-
 
                 coracao.style.left =
                     Math.random() *
                     100 +
                     "%";
 
-
                 coracao.style.animationDuration =
                     (2 +
                     Math.random() * 3)
                     + "s";
-
 
                 coracao.style.fontSize =
                     (18 +
                     Math.random() * 25)
                     + "px";
 
-
                 document.body.appendChild(
                     coracao
                 );
-
 
                 setTimeout(
                     function(){
@@ -2611,7 +2398,6 @@ function surpresa(){
                     },
                     6000
                 );
-
 
             },
             i * 50
@@ -2643,27 +2429,31 @@ function reiniciar(){
     atualizar();
 
     /*
-       A música NÃO é reiniciada.
-       Ela continua tocando normalmente.
+       A música NÃO é pausada.
+       Ela continua tocando mesmo
+       quando o usuário volta para o início.
     */
 
 }
 
 
 /* ==================================================
-   EVITAR QUE A PÁGINA RECARREGUE COM TECLAS
+   GARANTIR QUE A MÚSICA CONTINUE
 ================================================== */
 
 document.addEventListener(
-    "keydown",
-    function(e){
+    "visibilitychange",
+    function(){
 
         if(
-            e.key === " " &&
-            document.activeElement.tagName !== "BUTTON"
+            !document.hidden &&
+            musicaIniciada &&
+            musica.paused
         ){
 
-            e.preventDefault();
+            musica.play().catch(
+                function(){}
+            );
 
         }
 
