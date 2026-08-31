@@ -2,647 +2,2129 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Lara Alice ❤️</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Para Maria Eduarda ✨</title>
 
 <style>
 
+/* ==================================================
+   RESET
+================================================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
 
-height:100vh;
-overflow:hidden;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    background:#050505;
 
-position:relative;
+    color:white;
 
-color:white;
-text-align:center;
-
-background:black;
-
+    overflow:hidden;
 }
 
-/* FOTO FUNDO */
+
+/* ==================================================
+   FUNDO
+================================================== */
 
 body::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:fixed;
 
-top:0;
-left:0;
+    inset:0;
 
-width:100%;
-height:100%;
+    background:
 
-background-image:url("./Lara Alice.jpeg");
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.05),
+            transparent 30%
+        ),
 
-background-size:contain;
-background-repeat:no-repeat;
-background-position:center;
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(180,0,40,.12),
+            transparent 35%
+        );
 
-filter:brightness(0.55);
+    pointer-events:none;
 
-z-index:-2;
+    z-index:-2;
+}
+
+
+/* ==================================================
+   TELA DE ENTRADA
+================================================== */
+
+#entrada{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:9999;
+
+    transition:1.2s ease;
+}
+
+
+.entrada-conteudo{
+
+    width:90%;
+
+    max-width:600px;
+
+    animation:aparecer 1.5s ease;
+}
+
+
+.entrada-conteudo .pequeno{
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#888;
+
+    margin-bottom:25px;
+}
+
+
+.entrada-conteudo h1{
+
+    font-size:
+    clamp(40px,8vw,75px);
+
+    font-weight:300;
+
+    margin-bottom:15px;
+}
+
+
+.entrada-conteudo h1 span{
+
+    font-weight:bold;
+}
+
+
+.entrada-conteudo p{
+
+    color:#aaa;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+
+#btnEntrar{
+
+    border:none;
+
+    padding:16px 32px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#000;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+#btnEntrar:hover{
+
+    transform:scale(1.07);
 
 }
 
-/* ESCURECER */
 
-body::after{
+/* ==================================================
+   SITE
+================================================== */
 
-content:"";
+#site{
 
-position:absolute;
+    display:none;
 
-top:0;
-left:0;
+    height:100vh;
 
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.25);
-
-z-index:-1;
-
+    position:relative;
 }
 
-/* CONTAINER */
 
-.carta-container{
+/* ==================================================
+   SLIDES
+================================================== */
 
-position:relative;
+.slide{
 
-width:430px;
-height:540px;
+    position:absolute;
 
-perspective:1200px;
+    inset:0;
 
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:
+    60px
+    20px
+    100px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:scale(1.04);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
 }
 
-/* CARTA */
 
-.carta{
+.slide.ativo{
 
-position:absolute;
+    opacity:1;
 
-width:100%;
-height:100%;
+    visibility:visible;
 
-background:rgba(255,255,255,0.10);
-
-backdrop-filter:blur(8px);
-
-border-radius:25px;
-
-overflow:hidden;
-
-box-shadow:0 0 35px rgba(0,0,0,0.45);
-
-transform-style:preserve-3d;
-
-transition:1s;
-
+    transform:scale(1);
 }
 
-/* TAMPA */
-
-.tampa{
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:180px;
-
-background:#ffd6e0;
-
-clip-path:polygon(0 0,100% 0,50% 100%);
-
-transform-origin:top;
-
-transition:1s;
-
-z-index:5;
-
-}
-
-.aberta .tampa{
-
-transform:rotateX(180deg);
-
-}
-
-/* BOTÃO ABRIR */
-
-#abrirBtn{
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-z-index:10;
-
-}
-
-/* CONTEÚDO */
 
 .conteudo{
 
-position:absolute;
+    width:100%;
 
-width:100%;
-height:100%;
+    max-width:900px;
 
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+    max-height:82vh;
 
-padding:35px;
+    overflow:auto;
 
-opacity:0;
+    text-align:center;
 
-transition:1s;
+    padding:20px;
+}
+
+
+.conteudo::-webkit-scrollbar{
+
+    width:4px;
+}
+
+
+.conteudo::-webkit-scrollbar-thumb{
+
+    background:#444;
 
 }
 
-.aberta .conteudo{
 
-opacity:1;
+/* ==================================================
+   TEXTOS
+================================================== */
+
+.eyebrow{
+
+    color:#999;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:12px;
+
+    margin-bottom:18px;
+}
+
+
+h2{
+
+    font-size:
+    clamp(35px,6vw,65px);
+
+    font-weight:300;
+
+    margin-bottom:25px;
+
+    line-height:1.15;
+}
+
+
+h2 strong{
+
+    font-weight:bold;
+}
+
+
+.texto{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#ccc;
+
+    font-size:17px;
+
+    line-height:1.9;
+}
+
+
+.destaque{
+
+    font-size:
+    clamp(25px,4vw,45px);
+
+    line-height:1.5;
+
+    max-width:750px;
+
+    margin:auto;
+}
+
+
+/* ==================================================
+   BOTÕES
+================================================== */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 28px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.3);
+
+    border-radius:50px;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.05);
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.btn:hover{
+
+    background:white;
+
+    color:#000;
+
+    transform:translateY(-3px);
+}
+
+
+/* ==================================================
+   NAVEGAÇÃO
+================================================== */
+
+.navegacao{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:100;
+}
+
+
+.nav-btn{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(255,255,255,.3);
+
+    background:
+    rgba(0,0,0,.6);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+
+.nav-btn:hover{
+
+    background:white;
+
+    color:black;
+}
+
+
+#contadorSlide{
+
+    color:#888;
+
+    font-size:13px;
+
+    min-width:45px;
+
+    text-align:center;
+}
+
+
+/* ==================================================
+   INDICADORES
+================================================== */
+
+.indicadores{
+
+    position:fixed;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:6px;
+
+    z-index:100;
+
+    max-width:90%;
+
+    overflow:hidden;
+}
+
+
+.indicador{
+
+    width:25px;
+
+    height:3px;
+
+    background:#333;
+
+    transition:.4s;
+
+    flex-shrink:0;
+}
+
+
+.indicador.ativo{
+
+    background:white;
+}
+
+
+/* ==================================================
+   GALERIA
+================================================== */
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:22px;
+
+    max-width:750px;
+
+    margin:
+    35px
+    auto
+    0;
+}
+
+
+.foto-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#111;
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.45);
+
+    transition:.5s ease;
+}
+
+
+.foto-card:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.02);
+}
+
+
+.foto-card img{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.7s ease;
+}
+
+
+.foto-card:hover img{
+
+    transform:scale(1.06);
+}
+
+
+.foto-legenda{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    padding:
+    45px
+    18px
+    18px;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+    );
+
+    text-align:left;
+}
+
+
+.foto-legenda span{
+
+    font-size:13px;
+
+    color:#ddd;
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+
+    max-width:750px;
+
+    margin:
+    30px
+    auto
+    0;
+}
+
+
+.card{
+
+    padding:25px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.1);
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,.035);
+
+    transition:.3s;
+}
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    background:
+    rgba(255,255,255,.07);
+}
+
+
+.card .icone{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+}
+
+
+.card h3{
+
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+
+.card p{
+
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+
+/* ==================================================
+   CONTADOR
+================================================== */
+
+.contador{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+
+.numero{
+
+    min-width:100px;
+
+    padding:20px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.04);
+}
+
+
+.numero strong{
+
+    display:block;
+
+    font-size:28px;
+}
+
+
+.numero span{
+
+    font-size:11px;
+
+    color:#777;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+
+/* ==================================================
+   CARTA
+================================================== */
+
+.carta{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.035);
+
+    border-radius:20px;
+
+    text-align:left;
+
+    line-height:2;
+
+    color:#ddd;
+}
+
+
+.carta .assinatura{
+
+    margin-top:25px;
+
+    text-align:right;
+
+    font-style:italic;
+
+    color:white;
+}
+
+
+/* ==================================================
+   CORAÇÕES
+================================================== */
+
+.coracao{
+
+    position:fixed;
+
+    bottom:-30px;
+
+    font-size:18px;
+
+    animation:
+    subir
+    linear
+    forwards;
+
+    pointer-events:none;
+
+    z-index:999;
+}
+
+
+@keyframes subir{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(.5);
+
+        opacity:0;
+    }
+
+    15%{
+
+        opacity:.8;
+    }
+
+    100%{
+
+        transform:
+        translateY(-110vh)
+        scale(1.4);
+
+        opacity:0;
+    }
 
 }
 
-/* FLORES */
 
-.flor{
+/* ==================================================
+   ANIMAÇÕES
+================================================== */
 
-position:absolute;
+@keyframes aparecer{
 
-width:95px;
-height:95px;
+    from{
 
-object-fit:contain;
+        opacity:0;
 
-pointer-events:none;
+        transform:
+        translateY(20px);
+    }
 
-filter:drop-shadow(0 0 10px rgba(0,0,0,0.35));
+    to{
 
-animation:pulse 4s infinite ease-in-out;
+        opacity:1;
 
-z-index:1;
-
-}
-
-.flor1{
-top:15px;
-left:15px;
-}
-
-.flor2{
-top:15px;
-right:35px;
-}
-
-.flor3{
-bottom:15px;
-left:15px;
-}
-
-.flor4{
-bottom:15px;
-right:35px;
-}
-
-/* TÍTULO */
-
-h1{
-
-font-size:2.3rem;
-
-margin-bottom:25px;
-
-z-index:2;
+        transform:
+        translateY(0);
+    }
 
 }
 
-/* FRASES */
 
-.frase{
+.pulsar{
 
-font-size:1.45rem;
+    animation:
+    pulsar
+    2s
+    infinite;
+}
 
-line-height:1.6;
 
-min-height:160px;
+@keyframes pulsar{
 
-display:flex;
+    0%,100%{
 
-justify-content:center;
-align-items:center;
+        transform:scale(1);
+    }
 
-padding:10px;
+    50%{
 
-transition:0.5s;
-
-z-index:2;
+        transform:scale(1.08);
+    }
 
 }
 
-/* BOTÕES */
 
-button{
+/* ==================================================
+   MOBILE
+================================================== */
 
-padding:15px 35px;
+@media(max-width:650px){
 
-border:none;
+    .slide{
 
-border-radius:40px;
+        padding:
+        55px
+        15px
+        100px;
+    }
 
-background:#ffe5ec;
 
-color:#ff3366;
+    .conteudo{
 
-font-size:1rem;
+        max-height:78vh;
 
-font-weight:bold;
+        padding:10px;
+    }
 
-cursor:pointer;
 
-transition:0.3s;
+    .texto{
 
-z-index:2;
+        font-size:15px;
 
-margin-top:10px;
+        line-height:1.8;
+    }
 
-}
 
-button:hover{
+    .cards{
 
-transform:scale(1.05);
+        grid-template-columns:1fr;
+    }
 
-background:white;
 
-}
+    .galeria{
 
-/* ANIMAÇÕES */
+        grid-template-columns:1fr;
 
-.fade-out{
+        gap:18px;
+    }
 
-opacity:0;
-transform:translateY(-20px);
 
-}
+    .foto-card img{
 
-.fade-in{
+        height:430px;
+    }
 
-animation:fadeIn 0.8s ease;
 
-}
+    .contador{
 
-@keyframes fadeIn{
+        gap:8px;
+    }
 
-from{
-opacity:0;
-transform:translateY(20px);
-}
 
-to{
-opacity:1;
-transform:translateY(0);
-}
+    .numero{
 
-}
+        min-width:75px;
 
-@keyframes pulse{
+        padding:15px 8px;
+    }
 
-0%{
-transform:scale(1);
-}
 
-50%{
-transform:scale(1.04);
-}
+    .numero strong{
 
-100%{
-transform:scale(1);
-}
+        font-size:22px;
+    }
 
-}
 
-/* FINAL */
+    .carta{
 
-.final{
+        padding:25px;
 
-font-size:1.3rem;
+        font-size:14px;
+    }
 
-line-height:1.8;
 
-padding:15px;
+    .indicadores{
 
-animation:brilho 2s infinite alternate;
+        gap:4px;
+    }
 
-}
 
-@keyframes brilho{
+    .indicador{
 
-from{
-text-shadow:0 0 10px #ff7aa2;
-}
-
-to{
-text-shadow:0 0 25px #ffb3c7;
-}
-
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.carta-container{
-
-width:92%;
-height:78vh;
-
-}
-
-h1{
-
-font-size:2rem;
-
-}
-
-.frase{
-
-font-size:1.15rem;
-
-min-height:140px;
-
-}
-
-button{
-
-width:100%;
-
-padding:14px 20px;
-
-}
-
-.flor{
-
-width:72px;
-height:72px;
-
-}
-
-.flor1{
-top:5px;
-left:5px;
-}
-
-.flor2{
-top:5px;
-right:20px;
-}
-
-.flor3{
-bottom:5px;
-left:5px;
-}
-
-.flor4{
-bottom:5px;
-right:20px;
-}
-
-.final{
-
-font-size:1.05rem;
-
-}
+        width:18px;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<div class="carta-container">
 
-<div class="carta" id="carta">
+<!-- ==================================================
+     TELA INICIAL
+================================================== -->
 
-<div class="tampa"></div>
+<div id="entrada">
 
-<button id="abrirBtn" onclick="abrirCarta()">
-Abrir ❤️
-</button>
+    <div class="entrada-conteudo">
 
-<div class="conteudo">
+        <div class="pequeno">
+            Uma pequena surpresa
+        </div>
 
-<!-- FLORES -->
+        <h1>
+            Para <span>Maria Eduarda</span>
+        </h1>
 
-<img src="https://i.postimg.cc/5YPwKJX1/Design-sem-nome-4.png"
-class="flor flor1">
+        <p>
+            Algumas pessoas aparecem de repente...
+            <br>
+            e acabam despertando uma curiosidade
+            que dá vontade de descobrir onde vai dar.
+        </p>
 
-<img src="https://i.postimg.cc/0KqtxP8m/d29214c878893e2f5b87a5355799461f.png"
-class="flor flor2">
+        <button id="btnEntrar">
+            Abrir surpresa ✨
+        </button>
 
-<img src="https://i.postimg.cc/D4KCFn2P/png-clipart-rose-single-red-rose-red-rose-flower-arranging-plant-stem-thumbnail.png"
-class="flor flor3">
-
-<img src="https://i.postimg.cc/fShHZDwK/png-transparent-purple-cosmos-flower-illustration-flower-blossom-flower-purple-violet-color-thumbnai.png"
-class="flor flor4">
-
-<h1>💌 Para Lara Alice</h1>
-
-<div class="frase fade-in" id="frase">
-
-🎧 Coloque os fones de ouvido...
+    </div>
 
 </div>
 
-<button id="btnMusica" onclick="iniciarMusica()">
-Já coloquei ❤️
-</button>
 
-<button id="btnProxima"
-onclick="proximaMensagem()"
-style="display:none;">
 
-Próxima mensagem ❤️
+<!-- ==================================================
+     SITE
+================================================== -->
 
-</button>
+<div id="site">
+
+
+<!-- INDICADORES -->
+
+<div
+    class="indicadores"
+    id="indicadores">
+</div>
+
+
+
+<!-- ==================================================
+     SLIDE 1
+================================================== -->
+
+<section class="slide ativo">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Maria Eduarda ✨
+        </div>
+
+        <h2>
+
+            Talvez isso aqui seja
+            <strong>inesperado.</strong>
+
+        </h2>
+
+        <p class="texto">
+
+            Eu poderia simplesmente continuar conversando
+            com você pelo WhatsApp e deixar as coisas
+            acontecerem naturalmente...
+
+            <br><br>
+
+            Mas você já percebeu que eu gosto de fazer
+            algumas coisas de um jeito diferente. 😂
+
+        </p>
+
+        <button
+            class="btn"
+            onclick="proximo()">
+
+            Continuar →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 2
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Algumas descobertas
+        </div>
+
+        <h2>
+
+            Coisas que eu já
+            <strong>descobri sobre você.</strong>
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🖤
+                </div>
+
+                <h3>
+                    Preto
+                </h3>
+
+                <p>
+                    Já entendi que rosa não é exatamente
+                    a sua praia. 😂
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    ✈️
+                </div>
+
+                <h3>
+                    Viagens
+                </h3>
+
+                <p>
+                    Você mesma já falou que viajar
+                    é um dos melhores investimentos.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🎬
+                </div>
+
+                <h3>
+                    Cinema
+                </h3>
+
+                <p>
+                    Um cineminha aparentemente
+                    faz parte da lista.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🎵
+                </div>
+
+                <h3>
+                    Música
+                </h3>
+
+                <p>
+                    Luan Santana, Jorge & Mateus,
+                    pagode e uma playlist inteira.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🌹
+                </div>
+
+                <h3>
+                    Romantismo
+                </h3>
+
+                <p>
+                    Você deixou bem claro que gosta
+                    de romantismo e de ser surpreendida.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    💌
+                </div>
+
+                <h3>
+                    Cartas
+                </h3>
+
+                <p>
+                    E aparentemente uma cartinha
+                    ainda tem seu valor.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 3 - FOTOS
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma pausa pra apreciar
+        </div>
+
+        <h2>
+
+            Algumas coisas
+            <strong>merecem atenção.</strong>
+
+        </h2>
+
+        <p class="texto">
+
+            Eu poderia colocar uma legenda enorme aqui...
+            mas acho que essas fotos conseguem falar
+            um pouquinho por si mesmas. 😂
+
+        </p>
+
+
+        <div class="galeria">
+
+
+            <!-- FOTO 1 -->
+
+            <div class="foto-card">
+
+                <img
+                    src="foto1.jpeg"
+                    alt="Maria Eduarda">
+
+                <div class="foto-legenda">
+
+                    <span>
+                        🤍 Simplesmente linda.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOTO 2 -->
+
+            <div class="foto-card">
+
+                <img
+                    src="foto2.jpeg"
+                    alt="Maria Eduarda">
+
+                <div class="foto-legenda">
+
+                    <span>
+                        ✨ Essa também merece destaque.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 4
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma coisa que eu gostei
+        </div>
+
+        <h2>
+
+            Você gosta de
+            <strong>atitudes.</strong>
+
+        </h2>
+
+        <p class="destaque">
+
+            E talvez seja exatamente por isso
+            que eu esteja fazendo isso.
+
+        </p>
+
+        <p
+            class="texto"
+            style="margin-top:25px;">
+
+            Porque falar é fácil.
+
+            <br>
+
+            Difícil é fazer.
+
+            <br><br>
+
+            Então prefiro demonstrar aos poucos,
+            sem pressa e sem tentar criar expectativas
+            antes da hora.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 5
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma possibilidade
+        </div>
+
+        <h2>
+
+            E se a gente
+            <strong>viajasse juntos?</strong>
+
+        </h2>
+
+        <p class="texto">
+
+            Você falou que viajar é um dos melhores
+            investimentos que alguém pode fazer.
+
+            <br><br>
+
+            Então já fica registrada aqui a ideia:
+
+            conhecer lugares novos,
+            experimentar coisas diferentes,
+            rir de coisas aleatórias
+            e voltar com histórias pra contar.
+
+        </p>
+
+
+        <div class="contador">
+
+
+            <div class="numero">
+
+                <strong>
+                    ∞
+                </strong>
+
+                <span>
+                    Possibilidades
+                </span>
+
+            </div>
+
+
+            <div class="numero">
+
+                <strong>
+                    2
+                </strong>
+
+                <span>
+                    Pessoas
+                </span>
+
+            </div>
+
+
+            <div class="numero">
+
+                <strong>
+                    1
+                </strong>
+
+                <span>
+                    Ideia
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 6
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Sobre nós
+        </div>
+
+        <h2>
+
+            Ainda estamos
+            <strong>começando.</strong>
+
+        </h2>
+
+        <p class="texto">
+
+            E eu acho justamente isso bonito.
+
+            <br><br>
+
+            A gente ainda está descobrindo
+            o jeito um do outro,
+            conhecendo histórias,
+            gostos, manias e sonhos.
+
+            <br><br>
+
+            Não quero pular etapas.
+
+            Quero aproveitar cada uma delas.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 7
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma confissão
+        </div>
+
+        <h2>
+
+            Eu estou gostando de
+            <strong>te conhecer.</strong>
+
+        </h2>
+
+        <p class="texto">
+
+            Não vou fingir que não existe interesse,
+            porque existe.
+
+            <br><br>
+
+            E também não quero esconder minhas intenções:
+
+            eu estou procurando algo sério,
+            algo que possa se tornar duradouro.
+
+            <br><br>
+
+            Mas acredito que as melhores histórias
+            começam justamente assim:
+
+            duas pessoas se conhecendo,
+            conversando e descobrindo
+            se existe reciprocidade.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 8 - CARTA
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma pequena carta
+        </div>
+
+        <h2>
+            Maria,
+        </h2>
+
+
+        <div class="carta">
+
+            Talvez você nem imaginasse que uma conversa
+            que começou de forma tão simples pudesse
+            chegar até aqui.
+
+            <br><br>
+
+            Eu ainda estou descobrindo muitas coisas
+            sobre você, mas já descobri uma que gosto:
+
+            você parece ser daquelas pessoas que gostam
+            de viver momentos e criar histórias.
+
+            <br><br>
+
+            E se depender de mim, eu quero ter a chance
+            de construir algumas histórias ao seu lado.
+
+            <br><br>
+
+            Sem pressa.
+
+            Sem atropelar nada.
+
+            Apenas deixando acontecer,
+            mas sempre com intenção.
+
+            <div class="assinatura">
+
+                — Felipe 🤍
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 9
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            E agora...
+        </div>
+
+        <h2>
+
+            Uma pergunta.
+
+        </h2>
+
+        <p class="destaque">
+
+            Você está preparada
+            para descobrir
+            <span>onde isso pode chegar?</span>
+
+        </p>
+
+        <button
+            class="btn pulsar"
+            onclick="surpresa()">
+
+            Descobrir ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 10 - FINAL
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Fim?
+        </div>
+
+        <h2>
+
+            Acho que não.
+
+        </h2>
+
+        <p class="destaque">
+
+            Isso aqui é só o
+            <strong>começo.</strong>
+
+        </p>
+
+        <p
+            class="texto"
+            style="margin-top:30px;">
+
+            Agora você já sabe um pouco mais
+            sobre o que eu penso.
+
+            <br><br>
+
+            O resto...
+
+            a gente descobre pessoalmente. 😉
+
+        </p>
+
+
+        <button
+            class="btn"
+            onclick="reiniciar()">
+
+            Ver novamente ↻
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     NAVEGAÇÃO
+================================================== -->
+
+<div class="navegacao">
+
+    <button
+        class="nav-btn"
+        onclick="anterior()">
+
+        ←
+
+    </button>
+
+
+    <div id="contadorSlide">
+        1 / 10
+    </div>
+
+
+    <button
+        class="nav-btn"
+        onclick="proximo()">
+
+        →
+
+    </button>
 
 </div>
 
-</div>
 
 </div>
 
-<!-- MÚSICA -->
 
-<audio id="musica">
-
-<source src="./Lara Alice (2).mp3" type="audio/mpeg">
-
-</audio>
 
 <script>
 
-const mensagens = [
+/* ==================================================
+   CONFIGURAÇÕES
+================================================== */
 
-"Essa música foi feita pensando em você ❤️",
+const slides =
+    document.querySelectorAll(".slide");
 
-"Seu olhar junto com seu sorriso me desmonta completamente ❤️",
+let atual = 0;
 
-"Você merece viver coisas leves e bonitas 🌸",
 
-"Seu jeito me traz paz até nos dias difíceis 🌷",
 
-"Tem algo em você que faz qualquer momento ficar especial 🌹",
+/* ==================================================
+   TELA DE ENTRADA
+================================================== */
 
-"Você é daquelas pessoas difíceis de esquecer 💐",
+const entrada =
+    document.getElementById("entrada");
 
-"Seu sorriso consegue melhorar meu dia sem esforço 🌺",
+const btnEntrar =
+    document.getElementById("btnEntrar");
 
-"Você é muito mais incrível do que imagina 🌻",
+const site =
+    document.getElementById("site");
 
-"Eu adoro nossa conexão e o jeito leve que tudo acontece ❤️",
 
-"Seu olhar parece abraço 🌷",
+btnEntrar.addEventListener(
+    "click",
+    function(){
 
-"Você merece alguém que te motive e cuide do seu coração 🌹",
+        entrada.style.opacity = "0";
 
-"Seu sorriso parece que desarma qualquer coisa ruim em mim ❤️",
 
-"Você é intensa do jeito mais bonito possível 🌸",
+        setTimeout(
+            function(){
 
-"Eu gosto da sua companhia mais do que imaginava 🌷",
+                entrada.style.display = "none";
 
-"Até agora estou me segurando bastante pra não te abraçar toda hora ❤️",
+                site.style.display = "block";
 
-"Você apareceu de mansinho e bagunçou tudo aqui dentro 🌹"
+                criarIndicadores();
 
-];
+                atualizar();
 
-let index = 0;
+                criarCoracoes();
 
-function abrirCarta(){
+            },
+            900
+        );
 
-document
-.getElementById("carta")
-.classList.add("aberta");
+    }
+);
 
-document
-.getElementById("abrirBtn")
-.style.display = "none";
 
-}
 
-function iniciarMusica(){
+/* ==================================================
+   CRIAR INDICADORES
+================================================== */
 
-document
-.getElementById("musica")
-.play();
+function criarIndicadores(){
 
-document
-.getElementById("btnMusica")
-.style.display = "none";
+    const container =
+        document.getElementById("indicadores");
 
-document
-.getElementById("btnProxima")
-.style.display = "block";
 
-document
-.getElementById("frase")
-.innerHTML = mensagens[0];
+    container.innerHTML = "";
 
-index = 1;
 
-}
+    slides.forEach(
+        function(_, index){
 
-function proximaMensagem(){
+            const indicador =
+                document.createElement("div");
 
-const frase =
-document.getElementById("frase");
 
-frase.classList.remove("fade-in");
+            indicador.className =
+                "indicador";
 
-frase.classList.add("fade-out");
 
-setTimeout(()=>{
+            if(index === 0){
 
-if(index < mensagens.length){
+                indicador.classList.add(
+                    "ativo"
+                );
 
-frase.innerHTML = mensagens[index];
+            }
 
-index++;
 
-}else{
+            container.appendChild(
+                indicador
+            );
 
-frase.innerHTML = `
-
-<div class="final">
-
-❤️ ❤️ ❤️<br><br>
-
-Eu sei que ainda é muito cedo...<br><br>
-
-Mas se um dia você me der a oportunidade,<br>
-eu prometo fazer o possível pra te fazer feliz,<br>
-te apoiar, te motivar e cuidar do seu coração da forma mais sincera que eu conseguir ❤️<br><br>
-
-Porque desde que você apareceu,<br>
-algo aqui dentro mudou de um jeito bom 🌹<br><br>
-
-Com carinho,<br>
-Felipe ❤️
-
-<br><br>
-
-❤️ ❤️ ❤️
-
-</div>
-
-`;
-
-document
-.getElementById("btnProxima")
-.style.display = "none";
+        }
+    );
 
 }
 
-frase.classList.remove("fade-out");
 
-void frase.offsetWidth;
 
-frase.classList.add("fade-in");
+/* ==================================================
+   ATUALIZAR SLIDE
+================================================== */
 
-},500);
+function atualizar(){
+
+    slides.forEach(
+        function(slide,index){
+
+            slide.classList.remove(
+                "ativo"
+            );
+
+
+            if(index === atual){
+
+                slide.classList.add(
+                    "ativo"
+                );
+
+            }
+
+        }
+    );
+
+
+    const indicadores =
+        document.querySelectorAll(
+            ".indicador"
+        );
+
+
+    indicadores.forEach(
+        function(indicador,index){
+
+            indicador.classList.toggle(
+                "ativo",
+                index === atual
+            );
+
+        }
+    );
+
+
+    document.getElementById(
+        "contadorSlide"
+    ).innerText =
+
+        `${atual + 1} / ${slides.length}`;
+
+}
+
+
+
+/* ==================================================
+   PRÓXIMO
+================================================== */
+
+function proximo(){
+
+    if(atual < slides.length - 1){
+
+        atual++;
+
+        atualizar();
+
+    }
+
+}
+
+
+
+/* ==================================================
+   ANTERIOR
+================================================== */
+
+function anterior(){
+
+    if(atual > 0){
+
+        atual--;
+
+        atualizar();
+
+    }
+
+}
+
+
+
+/* ==================================================
+   TECLADO
+================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "ArrowRight"){
+
+            proximo();
+
+        }
+
+
+        if(e.key === "ArrowLeft"){
+
+            anterior();
+
+        }
+
+    }
+);
+
+
+
+/* ==================================================
+   SWIPE NO CELULAR
+================================================== */
+
+let inicioX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    function(e){
+
+        inicioX =
+            e.touches[0].clientX;
+
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(e){
+
+        const fimX =
+            e.changedTouches[0].clientX;
+
+
+        const distancia =
+            fimX - inicioX;
+
+
+        if(Math.abs(distancia) > 70){
+
+            if(distancia < 0){
+
+                proximo();
+
+            }
+            else{
+
+                anterior();
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/* ==================================================
+   CORAÇÕES AUTOMÁTICOS
+================================================== */
+
+function criarCoracoes(){
+
+    setInterval(
+        function(){
+
+            const coracao =
+                document.createElement("div");
+
+
+            coracao.className =
+                "coracao";
+
+
+            const simbolos = [
+
+                "♡",
+                "♥",
+                "✨",
+                "🤍"
+
+            ];
+
+
+            coracao.innerText =
+                simbolos[
+                    Math.floor(
+                        Math.random() *
+                        simbolos.length
+                    )
+                ];
+
+
+            coracao.style.left =
+                Math.random() * 100 + "%";
+
+
+            coracao.style.animationDuration =
+                (5 + Math.random() * 5)
+                + "s";
+
+
+            coracao.style.fontSize =
+                (12 + Math.random() * 18)
+                + "px";
+
+
+            document.body.appendChild(
+                coracao
+            );
+
+
+            setTimeout(
+                function(){
+
+                    coracao.remove();
+
+                },
+                10000
+            );
+
+
+        },
+        800
+    );
+
+}
+
+
+
+/* ==================================================
+   SURPRESA
+================================================== */
+
+function surpresa(){
+
+    for(
+        let i = 0;
+        i < 50;
+        i++
+    ){
+
+        setTimeout(
+            function(){
+
+                const coracao =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                coracao.className =
+                    "coracao";
+
+
+                coracao.innerText =
+                    "♥";
+
+
+                coracao.style.left =
+                    Math.random() *
+                    100 +
+                    "%";
+
+
+                coracao.style.animationDuration =
+                    (2 +
+                    Math.random() * 3)
+                    + "s";
+
+
+                coracao.style.fontSize =
+                    (18 +
+                    Math.random() * 25)
+                    + "px";
+
+
+                document.body.appendChild(
+                    coracao
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        coracao.remove();
+
+                    },
+                    6000
+                );
+
+
+            },
+            i * 50
+        );
+
+    }
+
+
+    setTimeout(
+        function(){
+
+            proximo();
+
+        },
+        1000
+    );
+
+}
+
+
+
+/* ==================================================
+   REINICIAR
+================================================== */
+
+function reiniciar(){
+
+    atual = 0;
+
+    atualizar();
 
 }
 
 </script>
 
+
 </body>
+
 </html>
