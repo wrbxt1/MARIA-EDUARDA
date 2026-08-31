@@ -27,43 +27,67 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#eadfe2;
-    color:#2b2023;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    /* FUNDO ROMÂNTICO - NÃO PRETO */
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.9),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255,182,193,.45),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(255,218,185,.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff8f5,
+            #fce4ec,
+            #f8e8ee,
+            #fff4e6
+        );
+
+    color:#222;
+
     overflow:hidden;
+
+    min-height:100vh;
 }
 
 
 /* ==================================================
-   FUNDO
+   FUNDO DECORATIVO
 ================================================== */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
 
     background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255,255,255,.8),
-            transparent 30%
-        ),
 
         radial-gradient(
-            circle at 85% 75%,
-            rgba(180,80,110,.18),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #f5e9eb,
-            #e8d8dd,
-            #f1e2e5
+            circle at 50% 50%,
+            rgba(255,255,255,.55),
+            transparent 45%
         );
 
     pointer-events:none;
+
     z-index:-2;
 }
 
@@ -73,18 +97,23 @@ body::before{
 ================================================== */
 
 #entrada{
+
     position:fixed;
+
     inset:0;
 
     background:
         radial-gradient(
             circle at center,
-            #f6e7ea,
-            #d9c1c8
+            #fffafa 0%,
+            #fde8ee 45%,
+            #f7d8df 100%
         );
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
@@ -94,39 +123,55 @@ body::before{
     transition:1.2s ease;
 }
 
+
 .entrada-conteudo{
+
     width:90%;
-    max-width:650px;
+
+    max-width:600px;
 
     animation:aparecer 1.5s ease;
 }
 
+
 .entrada-conteudo .pequeno{
+
     font-size:13px;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
 
-    color:#806a71;
+    color:#9a777f;
 
     margin-bottom:25px;
 }
 
+
 .entrada-conteudo h1{
-    font-size:clamp(40px,8vw,75px);
+
+    font-size:
+    clamp(40px,8vw,75px);
 
     font-weight:300;
 
-    margin-bottom:15px;
+    color:#4a3036;
 
-    color:#39272d;
+    margin-bottom:15px;
 }
+
 
 .entrada-conteudo h1 span{
+
     font-weight:bold;
+
+    color:#9b4059;
 }
 
+
 .entrada-conteudo p{
-    color:#67545a;
+
+    color:#725b61;
 
     font-size:16px;
 
@@ -135,14 +180,16 @@ body::before{
     margin-bottom:35px;
 }
 
+
 #btnEntrar{
+
     border:none;
 
     padding:16px 32px;
 
     border-radius:50px;
 
-    background:#39272d;
+    background:#9b4059;
 
     color:white;
 
@@ -156,20 +203,17 @@ body::before{
 
     box-shadow:
         0 10px 30px
-        rgba(60,35,45,.2);
+        rgba(155,64,89,.25);
 }
+
 
 #btnEntrar:hover{
+
     transform:scale(1.07);
-}
 
-
-/* ==================================================
-   MÚSICA
-================================================== */
-
-#musica{
-    display:none;
+    box-shadow:
+        0 15px 35px
+        rgba(155,64,89,.35);
 }
 
 
@@ -178,6 +222,7 @@ body::before{
 ================================================== */
 
 #site{
+
     display:none;
 
     height:100vh;
@@ -187,24 +232,38 @@ body::before{
 
 
 /* ==================================================
+   ÁUDIO
+================================================== */
+
+#musica{
+
+    display:none;
+}
+
+
+/* ==================================================
    SLIDES
 ================================================== */
 
 .slide{
+
     position:absolute;
+
     inset:0;
 
     display:flex;
 
     justify-content:center;
+
     align-items:center;
 
     padding:
-        60px
-        20px
-        100px;
+    60px
+    20px
+    100px;
 
     opacity:0;
+
     visibility:hidden;
 
     transform:scale(1.04);
@@ -214,15 +273,21 @@ body::before{
         transform .7s ease;
 }
 
+
 .slide.ativo{
+
     opacity:1;
+
     visibility:visible;
 
     transform:scale(1);
 }
 
+
 .conteudo{
+
     width:100%;
+
     max-width:900px;
 
     max-height:82vh;
@@ -234,12 +299,18 @@ body::before{
     padding:20px;
 }
 
+
 .conteudo::-webkit-scrollbar{
+
     width:4px;
 }
 
+
 .conteudo::-webkit-scrollbar-thumb{
-    background:#a98b94;
+
+    background:#c89ca8;
+
+    border-radius:10px;
 }
 
 
@@ -248,7 +319,8 @@ body::before{
 ================================================== */
 
 .eyebrow{
-    color:#8b6872;
+
+    color:#9b6875;
 
     text-transform:uppercase;
 
@@ -259,9 +331,11 @@ body::before{
     margin-bottom:18px;
 }
 
+
 h2{
+
     font-size:
-        clamp(35px,6vw,65px);
+    clamp(35px,6vw,65px);
 
     font-weight:300;
 
@@ -269,28 +343,36 @@ h2{
 
     line-height:1.15;
 
-    color:#34262b;
+    color:#49343a;
 }
+
 
 h2 strong{
+
     font-weight:bold;
+
+    color:#9b4059;
 }
 
+
 .texto{
+
     max-width:700px;
 
     margin:auto;
 
-    color:#5f4d53;
+    color:#68565c;
 
     font-size:17px;
 
     line-height:1.9;
 }
 
+
 .destaque{
+
     font-size:
-        clamp(25px,4vw,45px);
+    clamp(25px,4vw,45px);
 
     line-height:1.5;
 
@@ -298,7 +380,15 @@ h2 strong{
 
     margin:auto;
 
-    color:#34262b;
+    color:#49343a;
+}
+
+
+.destaque span{
+
+    color:#9b4059;
+
+    font-weight:bold;
 }
 
 
@@ -307,6 +397,7 @@ h2 strong{
 ================================================== */
 
 .btn{
+
     display:inline-block;
 
     margin-top:30px;
@@ -314,29 +405,38 @@ h2 strong{
     padding:14px 28px;
 
     border:
-        1px solid
-        rgba(70,40,50,.3);
+    1px solid
+    rgba(155,64,89,.35);
 
     border-radius:50px;
 
-    color:#39272d;
+    color:#7e354a;
 
     background:
-        rgba(255,255,255,.45);
+    rgba(255,255,255,.55);
 
     cursor:pointer;
 
     transition:.3s;
 
-    font-weight:bold;
+    font-size:15px;
+
+    font-weight:500;
+
+    box-shadow:
+        0 8px 25px
+        rgba(120,60,80,.08);
 }
 
+
 .btn:hover{
-    background:#39272d;
+
+    background:#9b4059;
 
     color:white;
 
     transform:translateY(-3px);
+
 }
 
 
@@ -345,9 +445,11 @@ h2 strong{
 ================================================== */
 
 .navegacao{
+
     position:fixed;
 
     bottom:25px;
+
     left:0;
 
     width:100%;
@@ -355,6 +457,7 @@ h2 strong{
     display:flex;
 
     justify-content:center;
+
     align-items:center;
 
     gap:20px;
@@ -362,36 +465,47 @@ h2 strong{
     z-index:100;
 }
 
+
 .nav-btn{
+
     width:48px;
+
     height:48px;
 
     border-radius:50%;
 
     border:
-        1px solid
-        rgba(60,35,45,.25);
+    1px solid
+    rgba(155,64,89,.3);
 
     background:
-        rgba(255,255,255,.5);
+    rgba(255,255,255,.65);
 
-    color:#39272d;
+    color:#7e354a;
 
     cursor:pointer;
 
     font-size:18px;
 
     transition:.3s;
+
+    box-shadow:
+        0 5px 20px
+        rgba(80,40,50,.08);
 }
 
+
 .nav-btn:hover{
-    background:#39272d;
+
+    background:#9b4059;
 
     color:white;
 }
 
+
 #contadorSlide{
-    color:#806a71;
+
+    color:#8b6b73;
 
     font-size:13px;
 
@@ -406,9 +520,11 @@ h2 strong{
 ================================================== */
 
 .indicadores{
+
     position:fixed;
 
     top:25px;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -424,19 +540,24 @@ h2 strong{
     overflow:hidden;
 }
 
+
 .indicador{
+
     width:25px;
+
     height:3px;
 
-    background:#c4aeb5;
+    background:rgba(120,80,90,.2);
 
     transition:.4s;
 
     flex-shrink:0;
 }
 
+
 .indicador.ativo{
-    background:#39272d;
+
+    background:#9b4059;
 }
 
 
@@ -445,48 +566,55 @@ h2 strong{
 ================================================== */
 
 .galeria{
+
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:22px;
 
     max-width:750px;
 
     margin:
-        35px
-        auto
-        0;
+    35px
+    auto
+    0;
 }
 
+
 .foto-card{
+
     position:relative;
 
     overflow:hidden;
 
     border-radius:22px;
 
-    background:#eee;
+    background:#fff;
 
     border:
-        1px solid
-        rgba(70,40,50,.15);
+    1px solid
+    rgba(155,64,89,.15);
 
     box-shadow:
-        0 20px 50px
-        rgba(70,40,50,.15);
+    0 20px 50px
+    rgba(80,40,50,.18);
 
     transition:.5s ease;
 }
 
+
 .foto-card:hover{
+
     transform:
-        translateY(-8px)
-        scale(1.02);
+    translateY(-8px)
+    scale(1.02);
 }
 
+
 .foto-card img{
+
     width:100%;
 
     height:420px;
@@ -498,35 +626,43 @@ h2 strong{
     transition:.7s ease;
 }
 
+
 .foto-card:hover img{
+
     transform:scale(1.06);
 }
 
+
 .foto-legenda{
+
     position:absolute;
 
     bottom:0;
+
     left:0;
+
     right:0;
 
     padding:
-        45px
-        18px
-        18px;
+    45px
+    18px
+    18px;
 
     background:
-        linear-gradient(
-            transparent,
-            rgba(45,25,32,.9)
-        );
+    linear-gradient(
+        transparent,
+        rgba(45,20,28,.8)
+    );
 
     text-align:left;
 }
 
+
 .foto-legenda span{
+
     font-size:13px;
 
-    color:white;
+    color:#fff;
 }
 
 
@@ -535,58 +671,73 @@ h2 strong{
 ================================================== */
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:15px;
 
     max-width:750px;
 
     margin:
-        30px
-        auto
-        0;
+    30px
+    auto
+    0;
 }
 
+
 .card{
+
     padding:25px;
 
     border:
-        1px solid
-        rgba(70,40,50,.12);
+    1px solid
+    rgba(155,64,89,.12);
 
     border-radius:18px;
 
     background:
-        rgba(255,255,255,.35);
+    rgba(255,255,255,.48);
 
     transition:.3s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(100,50,60,.06);
 }
 
+
 .card:hover{
+
     transform:translateY(-5px);
 
     background:
-        rgba(255,255,255,.55);
+    rgba(255,255,255,.7);
 }
 
+
 .card .icone{
+
     font-size:30px;
 
     margin-bottom:12px;
 }
 
+
 .card h3{
+
     font-size:17px;
 
     margin-bottom:8px;
 
-    color:#39272d;
+    color:#4d363d;
 }
 
+
 .card p{
+
     color:#806d73;
 
     font-size:14px;
@@ -600,6 +751,7 @@ h2 strong{
 ================================================== */
 
 .contador{
+
     display:flex;
 
     justify-content:center;
@@ -609,33 +761,43 @@ h2 strong{
     margin-top:30px;
 }
 
+
 .numero{
+
     min-width:100px;
 
     padding:20px;
 
     border:
-        1px solid
-        rgba(70,40,50,.12);
+    1px solid
+    rgba(155,64,89,.15);
 
     border-radius:15px;
 
     background:
-        rgba(255,255,255,.4);
+    rgba(255,255,255,.5);
+
+    box-shadow:
+        0 10px 30px
+        rgba(100,50,60,.06);
 }
 
+
 .numero strong{
+
     display:block;
 
     font-size:28px;
 
-    color:#39272d;
+    color:#9b4059;
 }
 
+
 .numero span{
+
     font-size:11px;
 
-    color:#806d73;
+    color:#8b747a;
 
     text-transform:uppercase;
 
@@ -648,6 +810,7 @@ h2 strong{
 ================================================== */
 
 .carta{
+
     max-width:700px;
 
     margin:auto;
@@ -655,11 +818,11 @@ h2 strong{
     padding:35px;
 
     border:
-        1px solid
-        rgba(70,40,50,.12);
+    1px solid
+    rgba(155,64,89,.15);
 
     background:
-        rgba(255,255,255,.4);
+    rgba(255,255,255,.55);
 
     border-radius:20px;
 
@@ -667,17 +830,23 @@ h2 strong{
 
     line-height:2;
 
-    color:#5c4a50;
+    color:#625258;
+
+    box-shadow:
+        0 15px 40px
+        rgba(100,50,60,.08);
 }
 
+
 .carta .assinatura{
+
     margin-top:25px;
 
     text-align:right;
 
     font-style:italic;
 
-    color:#39272d;
+    color:#9b4059;
 }
 
 
@@ -686,6 +855,7 @@ h2 strong{
 ================================================== */
 
 .coracao{
+
     position:fixed;
 
     bottom:-30px;
@@ -693,36 +863,43 @@ h2 strong{
     font-size:18px;
 
     animation:
-        subir
-        linear
-        forwards;
+    subir
+    linear
+    forwards;
 
     pointer-events:none;
 
     z-index:999;
+
+    color:#b64d68;
 }
+
 
 @keyframes subir{
 
     0%{
+
         transform:
-            translateY(0)
-            scale(.5);
+        translateY(0)
+        scale(.5);
 
         opacity:0;
     }
 
     15%{
+
         opacity:.8;
     }
 
     100%{
+
         transform:
-            translateY(-110vh)
-            scale(1.4);
+        translateY(-110vh)
+        scale(1.4);
 
         opacity:0;
     }
+
 }
 
 
@@ -733,37 +910,94 @@ h2 strong{
 @keyframes aparecer{
 
     from{
+
         opacity:0;
 
         transform:
-            translateY(20px);
+        translateY(20px);
     }
 
     to{
+
         opacity:1;
 
         transform:
-            translateY(0);
+        translateY(0);
     }
 
 }
 
+
 .pulsar{
+
     animation:
-        pulsar
-        2s
-        infinite;
+    pulsar
+    2s
+    infinite;
 }
+
 
 @keyframes pulsar{
 
     0%,100%{
+
         transform:scale(1);
     }
 
     50%{
+
         transform:scale(1.08);
     }
+
+}
+
+
+/* ==================================================
+   BOTÃO DA MÚSICA
+================================================== */
+
+.controle-musica{
+
+    position:fixed;
+
+    top:22px;
+
+    right:20px;
+
+    z-index:500;
+
+    border:
+    1px solid
+    rgba(155,64,89,.25);
+
+    background:
+    rgba(255,255,255,.65);
+
+    color:#7e354a;
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    box-shadow:
+        0 5px 20px
+        rgba(80,40,50,.08);
+}
+
+
+.controle-musica:hover{
+
+    background:#9b4059;
+
+    color:white;
 
 }
 
@@ -775,59 +1009,95 @@ h2 strong{
 @media(max-width:650px){
 
     .slide{
+
         padding:
-            55px
-            15px
-            100px;
+        55px
+        15px
+        100px;
     }
 
+
     .conteudo{
+
         max-height:78vh;
+
         padding:10px;
     }
 
+
     .texto{
+
         font-size:15px;
+
         line-height:1.8;
     }
 
+
     .cards{
+
         grid-template-columns:1fr;
     }
 
+
     .galeria{
+
         grid-template-columns:1fr;
+
         gap:18px;
     }
 
+
     .foto-card img{
+
         height:430px;
     }
 
+
     .contador{
+
         gap:8px;
     }
 
+
     .numero{
+
         min-width:75px;
+
         padding:15px 8px;
     }
 
+
     .numero strong{
+
         font-size:22px;
     }
 
+
     .carta{
+
         padding:25px;
+
         font-size:14px;
     }
 
+
     .indicadores{
+
         gap:4px;
     }
 
+
     .indicador{
+
         width:18px;
+    }
+
+
+    .controle-musica{
+
+        top:18px;
+
+        right:15px;
     }
 
 }
@@ -838,23 +1108,6 @@ h2 strong{
 
 
 <body>
-
-
-<!-- ==================================================
-     ÁUDIO GLOBAL
-================================================== -->
-
-<audio
-    id="musica"
-    loop
-    preload="auto">
-
-    <source
-        src="dia-lugar-e-hora.mp3"
-        type="audio/mpeg">
-
-</audio>
-
 
 
 <!-- ==================================================
@@ -870,28 +1123,51 @@ h2 strong{
         </div>
 
         <h1>
-            Para <span>Maria Eduarda</span> ✨
+            Para <span>Maria Eduarda</span>
         </h1>
 
         <p>
 
-            Tem uma música que me fez pensar
-            nessa história que está começando.
+            Algumas pessoas aparecem de repente...
+
+            <br>
+
+            e acabam despertando uma curiosidade
+            que dá vontade de descobrir onde vai dar.
 
             <br><br>
 
-            Talvez você entenda o motivo
-            quando ela começar...
+            E talvez uma música tenha tudo a ver
+            com essa história. 🎵
 
         </p>
 
         <button id="btnEntrar">
-            Ouvir e abrir surpresa 🎵
+
+            Abrir surpresa ✨
+
         </button>
 
     </div>
 
 </div>
+
+
+
+<!-- ==================================================
+     ÁUDIO GLOBAL
+     
+     IMPORTANTE:
+     O arquivo dia-lugar-e-hora.mp3 deve ficar
+     na MESMA PASTA deste index.html.
+================================================== -->
+
+<audio
+    id="musica"
+    src="dia-lugar-e-hora.mp3"
+    preload="auto"
+    loop>
+</audio>
 
 
 
@@ -902,10 +1178,24 @@ h2 strong{
 <div id="site">
 
 
+<!-- INDICADORES -->
+
 <div
     class="indicadores"
     id="indicadores">
 </div>
+
+
+<!-- CONTROLE DA MÚSICA -->
+
+<button
+    class="controle-musica"
+    id="controleMusica"
+    title="Pausar música">
+
+    🎵
+
+</button>
 
 
 
@@ -918,41 +1208,31 @@ h2 strong{
     <div class="conteudo">
 
         <div class="eyebrow">
-            Dia, Lugar e Hora 🎵
+            Maria Eduarda ✨
         </div>
 
         <h2>
 
-            Algumas histórias
-            começam de um jeito
+            Talvez isso aqui seja
             <strong>inesperado.</strong>
 
         </h2>
 
         <p class="texto">
 
-            E talvez seja exatamente isso que eu gosto
-            nessa música.
+            Eu poderia simplesmente continuar conversando
+            com você pelo WhatsApp e deixar as coisas
+            acontecerem naturalmente...
 
             <br><br>
 
-            Às vezes a gente não planeja conhecer alguém,
-            não sabe exatamente onde aquilo vai chegar...
+            Mas você já percebeu que eu gosto de fazer
+            algumas coisas de um jeito diferente. 😂
 
             <br><br>
 
-            Até que aparece uma pessoa que desperta
-            aquela vontade de descobrir.
-
-            <br><br>
-
-            Então aperta o botão.
-
-            <br><br>
-
-            A música começa agora...
-            e continua com a gente enquanto você
-            descobre o restante. 🤍
+            E já que você gosta de ser surpreendida,
+            resolvi preparar uma pequena surpresa.
 
         </p>
 
@@ -971,7 +1251,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 2
+     SLIDE 2 - SOBRE ELA
 ================================================== -->
 
 <section class="slide">
@@ -996,24 +1276,6 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🖤
-                </div>
-
-                <h3>
-                    Preto
-                </h3>
-
-                <p>
-                    Já entendi que rosa não é exatamente
-                    a sua praia. 😂
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icone">
                     🎂
                 </div>
 
@@ -1022,8 +1284,7 @@ h2 strong{
                 </h3>
 
                 <p>
-                    10 de abril.
-                    Uma data que agora já ficou registrada.
+                    10 de abril. 🎉
                 </p>
 
             </div>
@@ -1050,6 +1311,24 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
+                    🖤
+                </div>
+
+                <h3>
+                    Preto
+                </h3>
+
+                <p>
+                    Já entendi que rosa não é exatamente
+                    a sua praia. 😂
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
                     ✈️
                 </div>
 
@@ -1068,17 +1347,16 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🎤
+                    🎬
                 </div>
 
                 <h3>
-                    Luan Santana
+                    Cinema
                 </h3>
 
                 <p>
-                    Seu favorito.
-                    E o show do dia 27 de setembro já está
-                    na lista. 😂
+                    Um cineminha aparentemente
+                    faz parte da lista.
                 </p>
 
             </div>
@@ -1087,7 +1365,7 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    💌
+                    🌹
                 </div>
 
                 <h3>
@@ -1095,8 +1373,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Você parece gostar de atitudes,
-                    momentos e surpresas.
+                    Você gosta de romantismo
+                    e de ser surpreendida.
                 </p>
 
             </div>
@@ -1111,7 +1389,62 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 3 - FOTOS
+     SLIDE 3 - MÚSICA
+================================================== -->
+
+<section class="slide">
+
+    <div class="conteudo">
+
+        <div class="eyebrow">
+            Uma música
+        </div>
+
+        <h2>
+
+            Tem uma música que
+            <strong>combina com isso.</strong>
+
+        </h2>
+
+        <p class="destaque">
+
+            “Dia, Lugar e Hora” 🎵
+
+        </p>
+
+        <p
+            class="texto"
+            style="margin-top:25px;">
+
+            Afinal, algumas histórias começam
+            simplesmente porque duas pessoas
+            se encontram no dia, no lugar e na hora certa.
+
+            <br><br>
+
+            E quando você apertou aquele botão
+            no começo...
+
+            <br><br>
+
+            essa música começou a tocar.
+
+            <br><br>
+
+            Agora ela vai continuar enquanto
+            você passeia por essa surpresa. 🤍
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SLIDE 4 - FOTOS
 ================================================== -->
 
 <section class="slide">
@@ -1135,7 +1468,7 @@ h2 strong{
 
             <br>
 
-            Mas acho que essas fotos conseguem falar
+            mas acho que essas fotos conseguem falar
             um pouquinho por si mesmas. 😂
 
         </p>
@@ -1144,10 +1477,12 @@ h2 strong{
         <div class="galeria">
 
 
+            <!-- FOTO 1 -->
+
             <div class="foto-card">
 
                 <img
-                    src="https://i.postimg.cc/RVc5HmYq/foto1.jpg"
+                    src="foto1.jpeg"
                     alt="Maria Eduarda">
 
                 <div class="foto-legenda">
@@ -1162,10 +1497,12 @@ h2 strong{
 
 
 
+            <!-- FOTO 2 -->
+
             <div class="foto-card">
 
                 <img
-                    src="https://i.postimg.cc/g2m9y59m/foto2.jpg"
+                    src="foto2.jpeg"
                     alt="Maria Eduarda">
 
                 <div class="foto-legenda">
@@ -1188,7 +1525,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 4 - MÚSICAS
+     SLIDE 5 - MÚSICA E GOSTOS
 ================================================== -->
 
 <section class="slide">
@@ -1201,10 +1538,11 @@ h2 strong{
 
         <h2>
 
-            Acho que já descobri
-            <strong>um pouco do seu gosto.</strong>
+            E eu já descobri
+            <strong>alguns dos seus favoritos.</strong>
 
         </h2>
+
 
         <div class="cards">
 
@@ -1220,24 +1558,7 @@ h2 strong{
                 </h3>
 
                 <p>
-                    O favorito. ❤️
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icone">
-                    🎶
-                </div>
-
-                <h3>
-                    Jorge & Mateus
-                </h3>
-
-                <p>
-                    Também não pode faltar.
+                    O favorito. Isso aqui eu já decorei. 😂
                 </p>
 
             </div>
@@ -1250,11 +1571,11 @@ h2 strong{
                 </div>
 
                 <h3>
-                    Matheus & Kauan
+                    Jorge & Mateus
                 </h3>
 
                 <p>
-                    Mais uma dupla na playlist.
+                    Sertanejo também não pode faltar.
                 </p>
 
             </div>
@@ -1263,7 +1584,24 @@ h2 strong{
             <div class="card">
 
                 <div class="icone">
-                    🌟
+                    🎶
+                </div>
+
+                <h3>
+                    Matheus & Kauan
+                </h3>
+
+                <p>
+                    Mais um nome garantido na playlist.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🕺
                 </div>
 
                 <h3>
@@ -1271,7 +1609,8 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Pra variar um pouco o estilo. 😂
+                    Porque a playlist também
+                    precisa de variedade.
                 </p>
 
             </div>
@@ -1288,7 +1627,7 @@ h2 strong{
                 </h3>
 
                 <p>
-                    Outra presença garantida.
+                    Mais um que já entrou na lista.
                 </p>
 
             </div>
@@ -1301,12 +1640,12 @@ h2 strong{
                 </div>
 
                 <h3>
-                    E outras...
+                    Uma playlist inteira
                 </h3>
 
                 <p>
-                    Porque aparentemente a playlist
-                    é maior do que eu imaginava.
+                    Acho que ainda vou descobrir
+                    vários outros. 😂
                 </p>
 
             </div>
@@ -1321,7 +1660,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 5
+     SLIDE 6 - ATITUDES
 ================================================== -->
 
 <section class="slide">
@@ -1362,6 +1701,10 @@ h2 strong{
             sem pressa e sem tentar criar expectativas
             antes da hora.
 
+            <br><br>
+
+            Mas deixando claro que existe intenção.
+
         </p>
 
     </div>
@@ -1371,7 +1714,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 6
+     SLIDE 7 - VIAGEM
 ================================================== -->
 
 <section class="slide">
@@ -1403,10 +1746,16 @@ h2 strong{
             rir de coisas aleatórias
             e voltar com histórias pra contar.
 
+            <br><br>
+
+            Talvez um dia essa ideia
+            realmente saia daqui. 😉
+
         </p>
 
 
         <div class="contador">
+
 
             <div class="numero">
 
@@ -1446,6 +1795,7 @@ h2 strong{
 
             </div>
 
+
         </div>
 
     </div>
@@ -1455,7 +1805,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 7
+     SLIDE 8 - SOBRE VOCÊS
 ================================================== -->
 
 <section class="slide">
@@ -1488,7 +1838,15 @@ h2 strong{
 
             Não quero pular etapas.
 
+            <br><br>
+
             Quero aproveitar cada uma delas.
+
+            <br><br>
+
+            Conversar, sair, viajar,
+            conhecer você melhor
+            e ver naturalmente onde isso pode chegar.
 
         </p>
 
@@ -1499,7 +1857,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 8
+     SLIDE 9 - INTENÇÕES
 ================================================== -->
 
 <section class="slide">
@@ -1524,26 +1882,29 @@ h2 strong{
 
             <br><br>
 
-            E também não quero esconder minhas intenções:
-
-            eu estou procurando algo sério,
-            algo que possa se tornar duradouro.
+            E também não quero esconder minhas intenções.
 
             <br><br>
 
-            Quero conhecer você de verdade,
-            construir confiança,
-            viver momentos juntos
-            e descobrir se aquilo que estamos começando
-            pode se transformar em algo bonito.
+            Eu estou procurando um
+            <strong>relacionamento sério</strong>,
+            algo que possa se tornar
+            <strong>duradouro.</strong>
 
             <br><br>
 
-            Sem pressa.
+            Quero alguém para construir algo de verdade,
+            com reciprocidade, companheirismo,
+            respeito e vontade dos dois lados.
 
-            Sem atropelar nada.
+            <br><br>
 
-            Mas com intenção.
+            Mas acredito que as melhores histórias
+            começam justamente assim:
+
+            duas pessoas se conhecendo,
+            conversando e descobrindo
+            se existe reciprocidade.
 
         </p>
 
@@ -1554,7 +1915,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 9 - CARTA
+     SLIDE 10 - CARTA
 ================================================== -->
 
 <section class="slide">
@@ -1573,7 +1934,8 @@ h2 strong{
         <div class="carta">
 
             Talvez você nem imaginasse que uma conversa
-            pudesse chegar até aqui.
+            que começou de forma tão simples pudesse
+            chegar até aqui.
 
             <br><br>
 
@@ -1590,31 +1952,34 @@ h2 strong{
 
             <br><br>
 
-            Quero te conhecer cada vez mais,
-            respeitar seu tempo e deixar que as coisas
-            aconteçam naturalmente.
-
-            <br><br>
-
-            Mas também quero que você saiba uma coisa:
-
-            minhas intenções com você são sérias.
-
-            <br><br>
-
-            Eu não estou procurando algo passageiro.
-
-            Quero, se houver reciprocidade,
-            construir algo duradouro.
-
-            <br><br>
-
             Sem pressa.
+
+            <br>
 
             Sem atropelar nada.
 
+            <br>
+
             Apenas deixando acontecer,
             mas sempre com intenção.
+
+            <br><br>
+
+            Quero te conhecer de verdade,
+            descobrir cada vez mais sobre você
+            e, se os dois quiserem,
+            transformar essa história em algo sério
+            e duradouro.
+
+            <br><br>
+
+            Talvez seja cedo para saber
+            onde tudo isso vai chegar.
+
+            <br><br>
+
+            Mas não é cedo para saber
+            que eu quero descobrir.
 
             <div class="assinatura">
 
@@ -1631,7 +1996,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 10
+     SLIDE 11 - PERGUNTA
 ================================================== -->
 
 <section class="slide">
@@ -1652,7 +2017,7 @@ h2 strong{
 
             Você está preparada
             para descobrir
-            <strong>onde isso pode chegar?</strong>
+            <span>onde isso pode chegar?</span>
 
         </p>
 
@@ -1671,7 +2036,7 @@ h2 strong{
 
 
 <!-- ==================================================
-     SLIDE 11 - FINAL
+     SLIDE 12 - FINAL
 ================================================== -->
 
 <section class="slide">
@@ -1704,7 +2069,15 @@ h2 strong{
 
             <br><br>
 
+            Sabe que eu quero te conhecer,
+            sabe minhas intenções
+            e sabe que estou procurando algo sério.
+
+            <br><br>
+
             O resto...
+
+            <br><br>
 
             a gente descobre pessoalmente. 😉
 
@@ -1741,7 +2114,7 @@ h2 strong{
 
 
     <div id="contadorSlide">
-        1 / 11
+        1 / 12
     </div>
 
 
@@ -1773,7 +2146,20 @@ let atual = 0;
 
 
 /* ==================================================
-   TELA DE ENTRADA + MÚSICA
+   ÁUDIO
+================================================== */
+
+const musica =
+    document.getElementById("musica");
+
+const controleMusica =
+    document.getElementById("controleMusica");
+
+let musicaTocando = false;
+
+
+/* ==================================================
+   TELA DE ENTRADA
 ================================================== */
 
 const entrada =
@@ -1785,36 +2171,10 @@ const btnEntrar =
 const site =
     document.getElementById("site");
 
-const musica =
-    document.getElementById("musica");
-
 
 btnEntrar.addEventListener(
     "click",
     async function(){
-
-        /*
-         * A música começa EXATAMENTE aqui.
-         * Como o áudio está fora dos slides,
-         * ele não será destruído nem reiniciado
-         * quando trocar de slide.
-         */
-
-        musica.volume = 0.75;
-
-        try{
-
-            await musica.play();
-
-        }catch(erro){
-
-            console.log(
-                "Não foi possível iniciar a música:",
-                erro
-            );
-
-        }
-
 
         entrada.style.opacity = "0";
 
@@ -1836,6 +2196,81 @@ btnEntrar.addEventListener(
             900
         );
 
+
+        /*
+           A música começa exatamente quando
+           ela aperta "Abrir surpresa".
+
+           Como o áudio está FORA dos slides,
+           ele não será reiniciado ao trocar
+           de página.
+        */
+
+        try{
+
+            musica.volume = 0.8;
+
+            await musica.play();
+
+            musicaTocando = true;
+
+            controleMusica.innerText = "🎵";
+
+        }
+        catch(erro){
+
+            console.log(
+                "O navegador bloqueou a reprodução:",
+                erro
+            );
+
+            controleMusica.innerText = "🔇";
+
+        }
+
+    }
+);
+
+
+/* ==================================================
+   CONTROLE MANUAL DA MÚSICA
+================================================== */
+
+controleMusica.addEventListener(
+    "click",
+    function(){
+
+        if(musica.paused){
+
+            musica.play()
+                .then(function(){
+
+                    musicaTocando = true;
+
+                    controleMusica.innerText =
+                        "🎵";
+
+                })
+                .catch(function(){
+
+                    console.log(
+                        "Não foi possível iniciar a música."
+                    );
+
+                });
+
+        }
+        else{
+
+            musica.pause();
+
+            musicaTocando = false;
+
+            controleMusica.innerText =
+                "🔇";
+
+        }
+
     }
 );
 
@@ -1849,6 +2284,7 @@ function criarIndicadores(){
     const container =
         document.getElementById("indicadores");
 
+
     container.innerHTML = "";
 
 
@@ -1857,6 +2293,7 @@ function criarIndicadores(){
 
             const indicador =
                 document.createElement("div");
+
 
             indicador.className =
                 "indicador";
@@ -1928,6 +2365,7 @@ function atualizar(){
     document.getElementById(
         "contadorSlide"
     ).innerText =
+
         `${atual + 1} / ${slides.length}`;
 
 }
@@ -1976,11 +2414,16 @@ document.addEventListener(
     function(e){
 
         if(e.key === "ArrowRight"){
+
             proximo();
+
         }
 
+
         if(e.key === "ArrowLeft"){
+
             anterior();
+
         }
 
     }
@@ -1988,7 +2431,7 @@ document.addEventListener(
 
 
 /* ==================================================
-   SWIPE
+   SWIPE NO CELULAR
 ================================================== */
 
 let inicioX = 0;
@@ -2012,6 +2455,7 @@ document.addEventListener(
         const fimX =
             e.changedTouches[0].clientX;
 
+
         const distancia =
             fimX - inicioX;
 
@@ -2019,10 +2463,14 @@ document.addEventListener(
         if(Math.abs(distancia) > 70){
 
             if(distancia < 0){
+
                 proximo();
+
             }
             else{
+
                 anterior();
+
             }
 
         }
@@ -2043,15 +2491,18 @@ function criarCoracoes(){
             const coracao =
                 document.createElement("div");
 
+
             coracao.className =
                 "coracao";
 
 
             const simbolos = [
+
                 "♡",
                 "♥",
                 "✨",
                 "🤍"
+
             ];
 
 
@@ -2092,6 +2543,7 @@ function criarCoracoes(){
                 10000
             );
 
+
         },
         800
     );
@@ -2100,7 +2552,7 @@ function criarCoracoes(){
 
 
 /* ==================================================
-   SURPRESA
+   SURPRESA FINAL
 ================================================== */
 
 function surpresa(){
@@ -2191,11 +2643,32 @@ function reiniciar(){
     atualizar();
 
     /*
-     * A música NÃO é reiniciada aqui.
-     * Ela continua tocando normalmente.
-     */
+       A música NÃO é reiniciada.
+       Ela continua tocando normalmente.
+    */
 
 }
+
+
+/* ==================================================
+   EVITAR QUE A PÁGINA RECARREGUE COM TECLAS
+================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            e.key === " " &&
+            document.activeElement.tagName !== "BUTTON"
+        ){
+
+            e.preventDefault();
+
+        }
+
+    }
+);
 
 </script>
 
